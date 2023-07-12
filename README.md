@@ -61,7 +61,7 @@ SSR 구현 및 인터렉티브 기능에 집중했습니다.
 ![yarn][yarn-shield]
 ![nextdotjs][nextdotjs-shield]
 ![typescript][typescript-shield]
-![STYLEDCOMPONENT][styledcomponents-shield]
+![TailwindCSS][tailwindcss-shield]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -121,3 +121,4 @@ SSR 구현 및 인터렉티브 기능에 집중했습니다.
 [nextdotjs-shield]: https://img.shields.io/badge/nextjs-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [yarn-shield]: https://img.shields.io/badge/yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white
 [styledcomponents-shield]: https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white
+[tailwindcss-shield]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
