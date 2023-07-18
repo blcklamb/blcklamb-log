@@ -1,8 +1,10 @@
 import Icon from "@/components/Icon";
+import IconLoader from "@/components/IconLoader";
 
 export default function Home() {
   return (
     <>
+      <IconLoader />
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <div>
           <Icon name="arrow-down" width={24} height={24} />
