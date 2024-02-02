@@ -1,12 +1,10 @@
-import "./globals.css";
+import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "blcklamb log | 김채정",
   description: "프론트엔드 기술 학습 및 공유를 합니다.",
+  icons: { icon: "/icon.ico" },
 };
 
 export default function RootLayout({
@@ -16,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
