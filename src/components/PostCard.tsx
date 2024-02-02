@@ -8,7 +8,7 @@ interface PostCard {
 
 export const PostCard = ({ post }: PostCard) => {
   const { title, thumbnail, description, postedAt, readTime, url } = post;
-  console.log(post);
+
   const getPostURL = (url: string) => url.split("index.mdx")[0];
 
   return (
