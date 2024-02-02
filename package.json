@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "contentlayer dev & next dev",
-    "build": "next build",
+    "build": "contentlayer build & next build",
     "start": "next start",
     "lint": "next lint"
   },
