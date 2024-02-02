@@ -12,14 +12,14 @@ export const PostCard = ({ post }: PostCard) => {
   const getPostURL = (url: string) => url.split("index.mdx")[0];
 
   return (
-    <div>
+    <div className="mb-8 border-violet-300 border">
       <Link href={getPostURL(url)}>
         {thumbnail && (
           <Image src={thumbnail} alt="thumbnail" width={100} height={100} />
         )}
-        <h2>{title}</h2>
+        <h2 className="text-3xl">{title}</h2>
       </Link>
-      <div>
+      <div className="flex h-24 w-90">
         <p>{description}</p>
       </div>
       <div>
