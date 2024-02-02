@@ -15,7 +15,7 @@ const PostPage = ({ params: { slug } }: { params: { slug: string } }) => {
   return (
     <div>
       {singlePost.title}
-      <MDXContent components={MDXContent} />
+      <MDXContent />
     </div>
   );
 };
