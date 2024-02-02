@@ -37,6 +37,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@contentlayer/cli@npm:0.3.4":
+  version: 0.3.4
+  resolution: "@contentlayer/cli@npm:0.3.4"
+  dependencies:
+    "@contentlayer/core": 0.3.4
+    "@contentlayer/utils": 0.3.4
+    clipanion: ^3.2.1
+    typanion: ^3.12.1
+  checksum: af4abb096d4ee4b9bbdd53ffa767d662c19cf960fceabe4085d3f3328269f764159750a6004e0a791163ea280223185fb3912be9833cc8484f01b16808fe9af8
+  languageName: node
+  linkType: hard
+
+"@contentlayer/client@npm:0.3.4":
+  version: 0.3.4
+  resolution: "@contentlayer/client@npm:0.3.4"
+  dependencies:
+    "@contentlayer/core": 0.3.4
+  checksum: ccb591c83a90176554b016613a0390f9093180c96f9f2d1fd30d157b59626ba5f845d4d1d0013cccb835b5ae05104b2134d116cbfdd63dc47839a8e880134585
+  languageName: node
+  linkType: hard
+
 "@contentlayer/core@npm:0.3.4":
   version: 0.3.4
   resolution: "@contentlayer/core@npm:0.3.4"
@@ -63,6 +84,36 @@ __metadata:
     markdown-wasm:
       optional: true
   checksum: 3baf8cb7e581acf754976502a1a809b7c0ef9ef6e3e173eae83ff053f2dbee14da1d73220251eaae185fabaff89d8f6067a79cbbaa2a1419a72bd5b1d42609b3
+  languageName: node
+  linkType: hard
+
+"@contentlayer/source-files@npm:0.3.4":
+  version: 0.3.4
+  resolution: "@contentlayer/source-files@npm:0.3.4"
+  dependencies:
+    "@contentlayer/core": 0.3.4
+    "@contentlayer/utils": 0.3.4
+    chokidar: ^3.5.3
+    fast-glob: ^3.2.12
+    gray-matter: ^4.0.3
+    imagescript: ^1.2.16
+    micromatch: ^4.0.5
+    ts-pattern: ^4.3.0
+    unified: ^10.1.2
+    yaml: ^2.3.1
+    zod: ^3.21.4
+  checksum: 1dab61004b3792d018c4322943f9e523eea697a32dac129f6c469393a97e711cddf74220a85d58855ba6c67fd15d4c31de091533549abd9f57f706ed025fbbf7
+  languageName: node
+  linkType: hard
+
+"@contentlayer/source-remote-files@npm:0.3.4":
+  version: 0.3.4
+  resolution: "@contentlayer/source-remote-files@npm:0.3.4"
+  dependencies:
+    "@contentlayer/core": 0.3.4
+    "@contentlayer/source-files": 0.3.4
+    "@contentlayer/utils": 0.3.4
+  checksum: 88ea1aeba765a910d34edd39274726e1baa8235fcad918dfdb8139f3f08a75a68aca07898e8827b132680867605070ad3ba84fbd5d9c6db1e05f926b11354cc4
   languageName: node
   linkType: hard
 
@@ -1804,6 +1855,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"clipanion@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "clipanion@npm:3.2.1"
+  dependencies:
+    typanion: ^3.8.0
+  peerDependencies:
+    typanion: "*"
+  checksum: 448efd122ead3c802e61ba7a2002e2080c8cce01ce8a0a789d9b9e4f8fe70fd887dcf163ef8c778f5364a9e6f4b498b9f1853f709d7ed4291713e78bcfb88ee8
+  languageName: node
+  linkType: hard
+
 "cliui@npm:^8.0.1":
   version: 8.0.1
   resolution: "cliui@npm:8.0.1"
@@ -1881,6 +1943,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"contentlayer@npm:^0.3.4":
+  version: 0.3.4
+  resolution: "contentlayer@npm:0.3.4"
+  dependencies:
+    "@contentlayer/cli": 0.3.4
+    "@contentlayer/client": 0.3.4
+    "@contentlayer/core": 0.3.4
+    "@contentlayer/source-files": 0.3.4
+    "@contentlayer/source-remote-files": 0.3.4
+    "@contentlayer/utils": 0.3.4
+  bin:
+    contentlayer: ./bin/cli.cjs
+  checksum: 7a7165d3b935ec0879d5fbdb0e5bcdecb4ba8b80fb2c1c8b899624f2bbd1e28d100ca68fc6a8318ccd0e483e7ea916a53cdd3ff8cf109f606ededb69dbcb925f
+  languageName: node
+  linkType: hard
+
 "core-util-is@npm:^1.0.3":
   version: 1.0.3
   resolution: "core-util-is@npm:1.0.3"
@@ -1926,6 +2004,13 @@ __metadata:
   version: 4.0.1
   resolution: "data-uri-to-buffer@npm:4.0.1"
   checksum: 0d0790b67ffec5302f204c2ccca4494f70b4e2d940fea3d36b09f0bb2b8539c2e86690429eb1f1dc4bcc9e4df0644193073e63d9ee48ac9fce79ec1506e4aa4c
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^3.3.1":
+  version: 3.3.1
+  resolution: "date-fns@npm:3.3.1"
+  checksum: 6245e93a47de28ac96dffd4d62877f86e6b64854860ae1e00a4f83174d80bc8e59bd1259cf265223fb2ddce5c8e586dc9cc210f0d052faba2f7660e265877283
   languageName: node
   linkType: hard
 
@@ -3453,6 +3538,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"imagescript@npm:^1.2.16":
+  version: 1.2.18
+  resolution: "imagescript@npm:1.2.18"
+  checksum: ee3df4ac8111ec3e43dc0fe2d5895eb1d3e26184907171b293df134214012464841a7072d2475d0dd11a70ab3748192e201d07fc81701a1bb8feb4a22eec2929
+  languageName: node
+  linkType: hard
+
 "import-fresh@npm:^3.0.0, import-fresh@npm:^3.2.1":
   version: 3.3.0
   resolution: "import-fresh@npm:3.3.0"
@@ -4949,6 +5041,8 @@ __metadata:
     "@types/react": 18.2.14
     "@types/react-dom": 18.2.6
     autoprefixer: 10.4.14
+    contentlayer: ^0.3.4
+    date-fns: ^3.3.1
     eslint: 8.44.0
     eslint-config-next: 13.4.9
     framer-motion: ^10.12.18
@@ -6460,6 +6554,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typanion@npm:^3.12.1, typanion@npm:^3.8.0":
+  version: 3.14.0
+  resolution: "typanion@npm:3.14.0"
+  checksum: fc0590d02c13c659eb1689e8adf7777e6c00dc911377e44cd36fe1b1271cfaca71547149f12cdc275058c0de5562a14e5273adbae66d47e6e0320e36007f5912
+  languageName: node
+  linkType: hard
+
 "type-check@npm:^0.4.0, type-check@npm:~0.4.0":
   version: 0.4.0
   resolution: "type-check@npm:0.4.0"
@@ -6864,6 +6965,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"yaml@npm:^2.3.1":
+  version: 2.3.4
+  resolution: "yaml@npm:2.3.4"
+  checksum: e6d1dae1c6383bcc8ba11796eef3b8c02d5082911c6723efeeb5ba50fc8e881df18d645e64de68e421b577296000bea9c75d6d9097c2f6699da3ae0406c030d8
+  languageName: node
+  linkType: hard
+
 "yargs-parser@npm:^21.1.1":
   version: 21.1.1
   resolution: "yargs-parser@npm:21.1.1"
@@ -6897,6 +7005,13 @@ __metadata:
   version: 3.21.4
   resolution: "zod@npm:3.21.4"
   checksum: f185ba87342ff16f7a06686767c2b2a7af41110c7edf7c1974095d8db7a73792696bcb4a00853de0d2edeb34a5b2ea6a55871bc864227dace682a0a28de33e1f
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.21.4":
+  version: 3.22.4
+  resolution: "zod@npm:3.22.4"
+  checksum: 80bfd7f8039b24fddeb0718a2ec7c02aa9856e4838d6aa4864335a047b6b37a3273b191ef335bf0b2002e5c514ef261ffcda5a589fb084a48c336ffc4cdbab7f
   languageName: node
   linkType: hard
 
