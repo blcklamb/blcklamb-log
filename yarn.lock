@@ -920,6 +920,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "@mdx-js/loader@npm:^3.0.0":
   version: 3.0.0
   resolution: "@mdx-js/loader@npm:3.0.0"
@@ -932,8 +935,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "@mdx-js/mdx@npm:^2.0.0, @mdx-js/mdx@npm:^2.2.1":
   version: 2.3.0
   resolution: "@mdx-js/mdx@npm:2.3.0"
@@ -960,6 +966,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "@mdx-js/mdx@npm:^3.0.0":
   version: 3.0.0
   resolution: "@mdx-js/mdx@npm:3.0.0"
@@ -991,8 +1000,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "@mdx-js/react@npm:^2.2.1":
   version: 2.3.0
   resolution: "@mdx-js/react@npm:2.3.0"
@@ -1006,6 +1018,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "@mdx-js/react@npm:^3.0.0":
   version: 3.0.0
   resolution: "@mdx-js/react@npm:3.0.0"
@@ -1018,8 +1033,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "@next/env@npm:13.4.9":
   version: 13.4.9
   resolution: "@next/env@npm:13.4.9"
@@ -1913,6 +1931,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "@types/hast@npm:^3.0.0":
   version: 3.0.4
   resolution: "@types/hast@npm:3.0.4"
@@ -1922,8 +1943,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "@types/js-yaml@npm:^4.0.0":
   version: 4.0.9
   resolution: "@types/js-yaml@npm:4.0.9"
@@ -1948,6 +1972,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "@types/mdast@npm:^4.0.0":
   version: 4.0.3
   resolution: "@types/mdast@npm:4.0.3"
@@ -1958,9 +1985,12 @@ __metadata:
   linkType: hard
 
 "@types/mdx@npm:^2.0.0, @types/mdx@npm:^2.0.11":
+<<<<<<< HEAD
 =======
 "@types/mdx@npm:^2.0.0":
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
   version: 2.0.11
   resolution: "@types/mdx@npm:2.0.11"
   checksum: 4199e8d58f0a40be908fe8148959a4e9779f94339f83327495dd5a6609fc82cd5f6ff7391bf6077d7d2ca73cedec3557a51cac5044f0d6f2ae37e40019813dfe
@@ -1998,6 +2028,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "@types/prismjs@npm:^1.26.0":
   version: 1.26.3
   resolution: "@types/prismjs@npm:1.26.3"
@@ -2005,8 +2038,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "@types/prop-types@npm:*":
   version: 15.7.13
   resolution: "@types/prop-types@npm:15.7.13"
@@ -2077,6 +2113,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "@types/unist@npm:*, @types/unist@npm:^3.0.0":
   version: 3.0.2
   resolution: "@types/unist@npm:3.0.2"
@@ -2084,8 +2123,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "@types/unist@npm:^2, @types/unist@npm:^2.0.0":
   version: 2.0.10
   resolution: "@types/unist@npm:2.0.10"
@@ -2156,6 +2198,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@ungap/structured-clone@npm:^1.0.0":
   version: 1.2.0
   resolution: "@ungap/structured-clone@npm:1.2.0"
@@ -2168,11 +2211,29 @@ __metadata:
   resolution: "abbrev@npm:1.1.1"
   checksum: a4a97ec07d7ea112c517036882b2ac22f3109b7b19077dc656316d07d308438aac28e4d9746dc4d84bf6b1e75b4a7b0a5f3cb30592419f128ca9a8cee3bcfa17
 =======
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "abbrev@npm:^2.0.0":
   version: 2.0.0
   resolution: "abbrev@npm:2.0.0"
   checksum: 0e994ad2aa6575f94670d8a2149afe94465de9cedaaaac364e7fb43a40c3691c980ff74899f682f4ca58fa96b4cbd7421a015d3a6defe43a442117d7821a2f36
+<<<<<<< HEAD
 >>>>>>> a14f6c4 (📦️ Add gray-matter, next-contentlayer, next-mdx-remote)
+=======
+=======
+"@ungap/structured-clone@npm:^1.0.0":
+  version: 1.2.0
+  resolution: "@ungap/structured-clone@npm:1.2.0"
+  checksum: 4f656b7b4672f2ce6e272f2427d8b0824ed11546a601d8d5412b9d7704e83db38a8d9f402ecdf2b9063fc164af842ad0ec4a55819f621ed7e7ea4d1efcc74524
+  languageName: node
+  linkType: hard
+
+"abbrev@npm:^1.0.0":
+  version: 1.1.1
+  resolution: "abbrev@npm:1.1.1"
+  checksum: a4a97ec07d7ea112c517036882b2ac22f3109b7b19077dc656316d07d308438aac28e4d9746dc4d84bf6b1e75b4a7b0a5f3cb30592419f128ca9a8cee3bcfa17
+>>>>>>> dcc3f2d (📦 mdx-js/loader, mdx-js/react, next/mdx)
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
   languageName: node
   linkType: hard
 
@@ -2676,11 +2737,14 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "caniuse-lite@npm:^1.0.30001406, caniuse-lite@npm:^1.0.30001464, caniuse-lite@npm:^1.0.30001503":
   version: 1.0.30001583
   resolution: "caniuse-lite@npm:1.0.30001583"
   checksum: 35d34eac99c1f55a2232180254e9b674dd6326a89310e6896863bb0484278c6cdf1e934c9fbfb8ef7b215c47467354051f46dfce571f9b34c413f53b67c55aa1
 =======
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "caniuse-lite@npm:^1.0.30001406, caniuse-lite@npm:^1.0.30001464, caniuse-lite@npm:^1.0.30001669":
   version: 1.0.30001684
   resolution: "caniuse-lite@npm:1.0.30001684"
@@ -2693,6 +2757,12 @@ __metadata:
   version: 2.0.1
   resolution: "ccount@npm:2.0.1"
   checksum: 48193dada54c9e260e0acf57fc16171a225305548f9ad20d5471e0f7a8c026aedd8747091dccb0d900cde7df4e4ddbd235df0d8de4a64c71b12f0d3303eeafd4
+=======
+"caniuse-lite@npm:^1.0.30001406, caniuse-lite@npm:^1.0.30001464, caniuse-lite@npm:^1.0.30001503":
+  version: 1.0.30001583
+  resolution: "caniuse-lite@npm:1.0.30001583"
+  checksum: 35d34eac99c1f55a2232180254e9b674dd6326a89310e6896863bb0484278c6cdf1e934c9fbfb8ef7b215c47467354051f46dfce571f9b34c413f53b67c55aa1
+>>>>>>> dcc3f2d (📦 mdx-js/loader, mdx-js/react, next/mdx)
   languageName: node
   linkType: hard
 
@@ -2833,6 +2903,7 @@ __metadata:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "clsx@npm:^2.0.0":
   version: 2.1.0
   resolution: "clsx@npm:2.1.0"
@@ -2850,6 +2921,8 @@ __metadata:
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
 =======
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "cliui@npm:^8.0.1":
   version: 8.0.1
   resolution: "cliui@npm:8.0.1"
@@ -2858,6 +2931,19 @@ __metadata:
     strip-ansi: ^6.0.1
     wrap-ansi: ^7.0.0
   checksum: 79648b3b0045f2e285b76fb2e24e207c6db44323581e421c3acbd0e86454cba1b37aea976ab50195a49e7384b871e6dfb2247ad7dec53c02454ac6497394cb56
+=======
+"clsx@npm:^2.0.0":
+  version: 2.1.0
+  resolution: "clsx@npm:2.1.0"
+  checksum: 43fefc29b6b49c9476fbce4f8b1cc75c27b67747738e598e6651dd40d63692135dc60b18fa1c5b78a2a9ba8ae6fd2055a068924b94e20b42039bd53b78b98e1d
+  languageName: node
+  linkType: hard
+
+"collapse-white-space@npm:^2.0.0":
+  version: 2.1.0
+  resolution: "collapse-white-space@npm:2.1.0"
+  checksum: c8978b1f4e7d68bf846cfdba6c6689ce8910511df7d331eb6e6757e51ceffb52768d59a28db26186c91dcf9594955b59be9f8ccd473c485790f5d8b90dc6726f
+>>>>>>> dcc3f2d (📦 mdx-js/loader, mdx-js/react, next/mdx)
   languageName: node
   linkType: hard
 
@@ -3755,6 +3841,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "estree-util-attach-comments@npm:^3.0.0":
   version: 3.0.0
   resolution: "estree-util-attach-comments@npm:3.0.0"
@@ -3764,8 +3853,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "estree-util-build-jsx@npm:^2.0.0":
   version: 2.2.2
   resolution: "estree-util-build-jsx@npm:2.2.2"
@@ -3778,6 +3870,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "estree-util-build-jsx@npm:^3.0.0":
   version: 3.0.1
   resolution: "estree-util-build-jsx@npm:3.0.1"
@@ -3790,8 +3885,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "estree-util-is-identifier-name@npm:^1.0.0":
   version: 1.1.0
   resolution: "estree-util-is-identifier-name@npm:1.1.0"
@@ -3807,6 +3905,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "estree-util-is-identifier-name@npm:^3.0.0":
   version: 3.0.0
   resolution: "estree-util-is-identifier-name@npm:3.0.0"
@@ -3814,8 +3915,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "estree-util-to-js@npm:^1.1.0":
   version: 1.2.0
   resolution: "estree-util-to-js@npm:1.2.0"
@@ -3828,6 +3932,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "estree-util-to-js@npm:^2.0.0":
   version: 2.0.0
   resolution: "estree-util-to-js@npm:2.0.0"
@@ -3839,8 +3946,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "estree-util-value-to-estree@npm:^1.0.0":
   version: 1.3.0
   resolution: "estree-util-value-to-estree@npm:1.3.0"
@@ -3861,6 +3971,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "estree-util-visit@npm:^2.0.0":
   version: 2.0.0
   resolution: "estree-util-visit@npm:2.0.0"
@@ -3871,8 +3984,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "estree-walker@npm:^3.0.0":
   version: 3.0.3
   resolution: "estree-walker@npm:3.0.3"
@@ -4644,6 +4760,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "hast-util-to-estree@npm:^3.0.0":
   version: 3.1.0
   resolution: "hast-util-to-estree@npm:3.1.0"
@@ -4668,8 +4787,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "hast-util-to-html@npm:^8.0.0":
   version: 8.0.4
   resolution: "hast-util-to-html@npm:8.0.4"
@@ -4690,6 +4812,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "hast-util-to-jsx-runtime@npm:^2.0.0":
   version: 2.3.0
   resolution: "hast-util-to-jsx-runtime@npm:2.3.0"
@@ -4713,8 +4838,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "hast-util-to-parse5@npm:^7.0.0":
   version: 7.1.0
   resolution: "hast-util-to-parse5@npm:7.1.0"
@@ -4737,6 +4865,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "hast-util-whitespace@npm:^3.0.0":
   version: 3.0.0
   resolution: "hast-util-whitespace@npm:3.0.0"
@@ -4746,8 +4877,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "hastscript@npm:^7.0.0":
   version: 7.2.0
   resolution: "hastscript@npm:7.2.0"
@@ -4999,6 +5133,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "inline-style-parser@npm:0.2.2":
   version: 0.2.2
   resolution: "inline-style-parser@npm:0.2.2"
@@ -5006,8 +5143,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "internal-slot@npm:^1.0.3, internal-slot@npm:^1.0.5":
   version: 1.0.5
   resolution: "internal-slot@npm:1.0.5"
@@ -5717,6 +5857,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "markdown-extensions@npm:^2.0.0":
   version: 2.0.0
   resolution: "markdown-extensions@npm:2.0.0"
@@ -5724,8 +5867,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-definitions@npm:^5.0.0":
   version: 5.1.2
   resolution: "mdast-util-definitions@npm:5.1.2"
@@ -5758,6 +5904,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-from-markdown@npm:^2.0.0":
   version: 2.0.0
   resolution: "mdast-util-from-markdown@npm:2.0.0"
@@ -5778,8 +5927,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-frontmatter@npm:^1.0.0":
   version: 1.0.1
   resolution: "mdast-util-frontmatter@npm:1.0.1"
@@ -5805,6 +5957,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-mdx-expression@npm:^2.0.0":
   version: 2.0.0
   resolution: "mdast-util-mdx-expression@npm:2.0.0"
@@ -5819,8 +5974,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-mdx-jsx@npm:^2.0.0":
   version: 2.1.4
   resolution: "mdast-util-mdx-jsx@npm:2.1.4"
@@ -5842,6 +6000,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-mdx-jsx@npm:^3.0.0":
   version: 3.0.0
   resolution: "mdast-util-mdx-jsx@npm:3.0.0"
@@ -5863,8 +6024,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-mdx@npm:^2.0.0":
   version: 2.0.1
   resolution: "mdast-util-mdx@npm:2.0.1"
@@ -5879,6 +6043,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-mdx@npm:^3.0.0":
   version: 3.0.0
   resolution: "mdast-util-mdx@npm:3.0.0"
@@ -5892,8 +6059,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-mdxjs-esm@npm:^1.0.0":
   version: 1.3.1
   resolution: "mdast-util-mdxjs-esm@npm:1.3.1"
@@ -5908,6 +6078,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-mdxjs-esm@npm:^2.0.0":
   version: 2.0.1
   resolution: "mdast-util-mdxjs-esm@npm:2.0.1"
@@ -5922,8 +6095,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-phrasing@npm:^3.0.0":
   version: 3.0.1
   resolution: "mdast-util-phrasing@npm:3.0.1"
@@ -5935,6 +6111,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-phrasing@npm:^4.0.0":
   version: 4.1.0
   resolution: "mdast-util-phrasing@npm:4.1.0"
@@ -5945,8 +6124,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-to-hast@npm:^12.1.0":
   version: 12.3.0
   resolution: "mdast-util-to-hast@npm:12.3.0"
@@ -5964,6 +6146,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-to-hast@npm:^13.0.0":
   version: 13.1.0
   resolution: "mdast-util-to-hast@npm:13.1.0"
@@ -5981,8 +6166,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-to-markdown@npm:^1.0.0, mdast-util-to-markdown@npm:^1.3.0":
   version: 1.5.0
   resolution: "mdast-util-to-markdown@npm:1.5.0"
@@ -6000,6 +6188,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-to-markdown@npm:^2.0.0":
   version: 2.1.0
   resolution: "mdast-util-to-markdown@npm:2.1.0"
@@ -6016,8 +6207,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-to-string@npm:^3.0.0, mdast-util-to-string@npm:^3.1.0":
   version: 3.2.0
   resolution: "mdast-util-to-string@npm:3.2.0"
@@ -6028,6 +6222,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdast-util-to-string@npm:^4.0.0":
   version: 4.0.0
   resolution: "mdast-util-to-string@npm:4.0.0"
@@ -6037,8 +6234,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "mdx-bundler@npm:^9.2.1":
   version: 9.2.1
   resolution: "mdx-bundler@npm:9.2.1"
@@ -6106,6 +6306,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-core-commonmark@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-core-commonmark@npm:2.0.0"
@@ -6130,8 +6333,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-extension-frontmatter@npm:^1.0.0":
   version: 1.1.1
   resolution: "micromark-extension-frontmatter@npm:1.1.1"
@@ -6161,6 +6367,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-extension-mdx-expression@npm:^3.0.0":
   version: 3.0.0
   resolution: "micromark-extension-mdx-expression@npm:3.0.0"
@@ -6177,8 +6386,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-extension-mdx-jsx@npm:^1.0.0":
   version: 1.0.5
   resolution: "micromark-extension-mdx-jsx@npm:1.0.5"
@@ -6198,6 +6410,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-extension-mdx-jsx@npm:^3.0.0":
   version: 3.0.0
   resolution: "micromark-extension-mdx-jsx@npm:3.0.0"
@@ -6216,8 +6431,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-extension-mdx-md@npm:^1.0.0":
   version: 1.0.1
   resolution: "micromark-extension-mdx-md@npm:1.0.1"
@@ -6228,6 +6446,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-extension-mdx-md@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-extension-mdx-md@npm:2.0.0"
@@ -6237,8 +6458,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-extension-mdxjs-esm@npm:^1.0.0":
   version: 1.0.5
   resolution: "micromark-extension-mdxjs-esm@npm:1.0.5"
@@ -6257,6 +6481,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-extension-mdxjs-esm@npm:^3.0.0":
   version: 3.0.0
   resolution: "micromark-extension-mdxjs-esm@npm:3.0.0"
@@ -6274,8 +6501,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-extension-mdxjs@npm:^1.0.0":
   version: 1.0.1
   resolution: "micromark-extension-mdxjs@npm:1.0.1"
@@ -6293,6 +6523,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-extension-mdxjs@npm:^3.0.0":
   version: 3.0.0
   resolution: "micromark-extension-mdxjs@npm:3.0.0"
@@ -6309,8 +6542,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-factory-destination@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-factory-destination@npm:1.1.0"
@@ -6323,6 +6559,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-factory-destination@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-factory-destination@npm:2.0.0"
@@ -6334,8 +6573,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-factory-label@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-factory-label@npm:1.1.0"
@@ -6349,6 +6591,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-factory-label@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-factory-label@npm:2.0.0"
@@ -6361,8 +6606,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-factory-mdx-expression@npm:^1.0.0":
   version: 1.0.9
   resolution: "micromark-factory-mdx-expression@npm:1.0.9"
@@ -6380,6 +6628,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-factory-mdx-expression@npm:^2.0.0":
   version: 2.0.1
   resolution: "micromark-factory-mdx-expression@npm:2.0.1"
@@ -6396,8 +6647,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-factory-space@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-factory-space@npm:1.1.0"
@@ -6409,6 +6663,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-factory-space@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-factory-space@npm:2.0.0"
@@ -6419,8 +6676,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-factory-title@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-factory-title@npm:1.1.0"
@@ -6434,6 +6694,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-factory-title@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-factory-title@npm:2.0.0"
@@ -6446,8 +6709,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-factory-whitespace@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-factory-whitespace@npm:1.1.0"
@@ -6461,6 +6727,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-factory-whitespace@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-factory-whitespace@npm:2.0.0"
@@ -6473,8 +6742,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-character@npm:^1.0.0":
   version: 1.2.0
   resolution: "micromark-util-character@npm:1.2.0"
@@ -6486,6 +6758,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-character@npm:^2.0.0":
   version: 2.1.0
   resolution: "micromark-util-character@npm:2.1.0"
@@ -6496,8 +6771,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-chunked@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-util-chunked@npm:1.1.0"
@@ -6508,6 +6786,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-chunked@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-util-chunked@npm:2.0.0"
@@ -6517,8 +6798,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-classify-character@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-util-classify-character@npm:1.1.0"
@@ -6531,6 +6815,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-classify-character@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-util-classify-character@npm:2.0.0"
@@ -6542,8 +6829,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-combine-extensions@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-util-combine-extensions@npm:1.1.0"
@@ -6555,6 +6845,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-combine-extensions@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-util-combine-extensions@npm:2.0.0"
@@ -6565,8 +6858,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-decode-numeric-character-reference@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-util-decode-numeric-character-reference@npm:1.1.0"
@@ -6577,6 +6873,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-decode-numeric-character-reference@npm:^2.0.0":
   version: 2.0.1
   resolution: "micromark-util-decode-numeric-character-reference@npm:2.0.1"
@@ -6586,8 +6885,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-decode-string@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-util-decode-string@npm:1.1.0"
@@ -6601,6 +6903,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-decode-string@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-util-decode-string@npm:2.0.0"
@@ -6613,8 +6918,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-encode@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-util-encode@npm:1.1.0"
@@ -6623,6 +6931,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-encode@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-util-encode@npm:2.0.0"
@@ -6630,8 +6941,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-events-to-acorn@npm:^1.0.0":
   version: 1.2.3
   resolution: "micromark-util-events-to-acorn@npm:1.2.3"
@@ -6649,6 +6963,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-events-to-acorn@npm:^2.0.0":
   version: 2.0.2
   resolution: "micromark-util-events-to-acorn@npm:2.0.2"
@@ -6665,8 +6982,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-html-tag-name@npm:^1.0.0":
   version: 1.2.0
   resolution: "micromark-util-html-tag-name@npm:1.2.0"
@@ -6675,6 +6995,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-html-tag-name@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-util-html-tag-name@npm:2.0.0"
@@ -6682,8 +7005,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-normalize-identifier@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-util-normalize-identifier@npm:1.1.0"
@@ -6694,6 +7020,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-normalize-identifier@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-util-normalize-identifier@npm:2.0.0"
@@ -6703,8 +7032,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-resolve-all@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-util-resolve-all@npm:1.1.0"
@@ -6715,6 +7047,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-resolve-all@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-util-resolve-all@npm:2.0.0"
@@ -6724,8 +7059,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-sanitize-uri@npm:^1.0.0, micromark-util-sanitize-uri@npm:^1.1.0":
   version: 1.2.0
   resolution: "micromark-util-sanitize-uri@npm:1.2.0"
@@ -6738,6 +7076,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-sanitize-uri@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-util-sanitize-uri@npm:2.0.0"
@@ -6749,8 +7090,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-subtokenize@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-util-subtokenize@npm:1.1.0"
@@ -6764,6 +7108,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-subtokenize@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-util-subtokenize@npm:2.0.0"
@@ -6776,8 +7123,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-symbol@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-util-symbol@npm:1.1.0"
@@ -6786,6 +7136,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-symbol@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-util-symbol@npm:2.0.0"
@@ -6793,8 +7146,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-types@npm:^1.0.0, micromark-util-types@npm:^1.0.1":
   version: 1.1.0
   resolution: "micromark-util-types@npm:1.1.0"
@@ -6803,6 +7159,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark-util-types@npm:^2.0.0":
   version: 2.0.0
   resolution: "micromark-util-types@npm:2.0.0"
@@ -6810,8 +7169,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark@npm:^3.0.0":
   version: 3.2.0
   resolution: "micromark@npm:3.2.0"
@@ -6838,6 +7200,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromark@npm:^4.0.0":
   version: 4.0.0
   resolution: "micromark@npm:4.0.0"
@@ -6863,8 +7228,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "micromatch@npm:^4.0.4, micromatch@npm:^4.0.5":
   version: 4.0.5
   resolution: "micromatch@npm:4.0.5"
@@ -8120,6 +8488,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "prism-react-renderer@npm:^2.3.1":
   version: 2.3.1
   resolution: "prism-react-renderer@npm:2.3.1"
@@ -8130,11 +8499,27 @@ __metadata:
     react: ">=16.0.0"
   checksum: b12a7d502c1e764d94f7d3c84aee9cd6fccc676bb7e21dee94d37eb2e7e62e097a343999e1979887cb83a57cbdea48d2046aa74d07bce05caa25f4c296df30b6
 =======
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "proc-log@npm:^4.1.0, proc-log@npm:^4.2.0":
   version: 4.2.0
   resolution: "proc-log@npm:4.2.0"
   checksum: 98f6cd012d54b5334144c5255ecb941ee171744f45fca8b43b58ae5a0c1af07352475f481cadd9848e7f0250376ee584f6aa0951a856ff8f021bdfbff4eb33fc
+<<<<<<< HEAD
 >>>>>>> a14f6c4 (📦️ Add gray-matter, next-contentlayer, next-mdx-remote)
+=======
+=======
+"prism-react-renderer@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "prism-react-renderer@npm:2.3.1"
+  dependencies:
+    "@types/prismjs": ^1.26.0
+    clsx: ^2.0.0
+  peerDependencies:
+    react: ">=16.0.0"
+  checksum: b12a7d502c1e764d94f7d3c84aee9cd6fccc676bb7e21dee94d37eb2e7e62e097a343999e1979887cb83a57cbdea48d2046aa74d07bce05caa25f4c296df30b6
+>>>>>>> dcc3f2d (📦 mdx-js/loader, mdx-js/react, next/mdx)
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
   languageName: node
   linkType: hard
 
@@ -8408,6 +8793,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "remark-mdx@npm:^3.0.0":
   version: 3.0.0
   resolution: "remark-mdx@npm:3.0.0"
@@ -8418,8 +8806,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "remark-parse@npm:^10.0.0, remark-parse@npm:^10.0.2":
   version: 10.0.2
   resolution: "remark-parse@npm:10.0.2"
@@ -8432,6 +8823,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "remark-parse@npm:^11.0.0":
   version: 11.0.0
   resolution: "remark-parse@npm:11.0.0"
@@ -8444,8 +8838,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "remark-rehype@npm:^10.0.0, remark-rehype@npm:^10.1.0":
   version: 10.1.0
   resolution: "remark-rehype@npm:10.1.0"
@@ -8459,6 +8856,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "remark-rehype@npm:^11.0.0":
   version: 11.1.0
   resolution: "remark-rehype@npm:11.1.0"
@@ -8472,8 +8872,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "repeat-string@npm:^1.6.1":
   version: 1.6.1
   resolution: "repeat-string@npm:1.6.1"
@@ -9055,6 +9458,7 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "style-to-object@npm:^0.4.0, style-to-object@npm:^0.4.1":
 =======
 "style-to-object@npm:^0.4.1":
@@ -9082,6 +9486,9 @@ __metadata:
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
 =======
 "style-to-object@npm:^0.4.1":
+=======
+"style-to-object@npm:^0.4.0, style-to-object@npm:^0.4.1":
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
   version: 0.4.4
   resolution: "style-to-object@npm:0.4.4"
   dependencies:
@@ -9090,7 +9497,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 >>>>>>> a14f6c4 (📦️ Add gray-matter, next-contentlayer, next-mdx-remote)
+=======
+<<<<<<< HEAD
+"style-to-object@npm:^0.4.1":
+  version: 0.4.4
+  resolution: "style-to-object@npm:0.4.4"
+  dependencies:
+    inline-style-parser: 0.1.1
+  checksum: 41656c06f93ac0a7ac260ebc2f9d09a8bd74b8ec1836f358cc58e169235835a3a356977891d2ebbd76f0e08a53616929069199f9cce543214d3dc98346e19c9a
+=======
+"style-to-object@npm:^1.0.0":
+  version: 1.0.5
+  resolution: "style-to-object@npm:1.0.5"
+  dependencies:
+    inline-style-parser: 0.2.2
+  checksum: 6201063204b6a94645f81b189452b2ca3e63d61867ec48523f4d52609c81e96176739fa12020d97fbbf023efb57a6f7ec3a15fb3a7fb7eb3ffea0b52b9dd6b8c
+>>>>>>> dcc3f2d (📦 mdx-js/loader, mdx-js/react, next/mdx)
+  languageName: node
+  linkType: hard
+
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "styled-jsx@npm:5.1.1":
   version: 5.1.1
   resolution: "styled-jsx@npm:5.1.1"
@@ -9447,6 +9875,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "unified@npm:^11.0.0":
   version: 11.0.4
   resolution: "unified@npm:11.0.4"
@@ -9462,8 +9893,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "unique-filename@npm:^3.0.0":
   version: 3.0.0
   resolution: "unique-filename@npm:3.0.0"
@@ -9499,6 +9933,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "unist-util-is@npm:^6.0.0":
   version: 6.0.0
   resolution: "unist-util-is@npm:6.0.0"
@@ -9508,8 +9945,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "unist-util-position-from-estree@npm:^1.0.0, unist-util-position-from-estree@npm:^1.1.0":
   version: 1.1.2
   resolution: "unist-util-position-from-estree@npm:1.1.2"
@@ -9520,6 +9960,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "unist-util-position-from-estree@npm:^2.0.0":
   version: 2.0.0
   resolution: "unist-util-position-from-estree@npm:2.0.0"
@@ -9529,8 +9972,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "unist-util-position@npm:^4.0.0":
   version: 4.0.4
   resolution: "unist-util-position@npm:4.0.4"
@@ -9541,6 +9987,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "unist-util-position@npm:^5.0.0":
   version: 5.0.0
   resolution: "unist-util-position@npm:5.0.0"
@@ -9550,8 +9999,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "unist-util-remove-position@npm:^4.0.0":
   version: 4.0.2
   resolution: "unist-util-remove-position@npm:4.0.2"
@@ -9563,6 +10015,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "unist-util-remove-position@npm:^5.0.0":
   version: 5.0.0
   resolution: "unist-util-remove-position@npm:5.0.0"
@@ -9573,8 +10028,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "unist-util-stringify-position@npm:^3.0.0":
   version: 3.0.3
   resolution: "unist-util-stringify-position@npm:3.0.3"
@@ -9585,6 +10043,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "unist-util-stringify-position@npm:^4.0.0":
   version: 4.0.0
   resolution: "unist-util-stringify-position@npm:4.0.0"
@@ -9594,8 +10055,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "unist-util-visit-parents@npm:^5.1.1":
   version: 5.1.3
   resolution: "unist-util-visit-parents@npm:5.1.3"
@@ -9607,6 +10071,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "unist-util-visit-parents@npm:^6.0.0":
   version: 6.0.1
   resolution: "unist-util-visit-parents@npm:6.0.1"
@@ -9617,8 +10084,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "unist-util-visit@npm:^4.0.0":
   version: 4.1.2
   resolution: "unist-util-visit@npm:4.1.2"
@@ -9631,6 +10101,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "unist-util-visit@npm:^5.0.0":
   version: 5.0.0
   resolution: "unist-util-visit@npm:5.0.0"
@@ -9642,8 +10115,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "untildify@npm:^4.0.0":
   version: 4.0.0
   resolution: "untildify@npm:4.0.0"
@@ -9803,6 +10279,9 @@ __metadata:
   linkType: hard
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "vfile-message@npm:^4.0.0":
   version: 4.0.2
   resolution: "vfile-message@npm:4.0.2"
@@ -9813,8 +10292,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "vfile@npm:^5.0.0, vfile@npm:^5.3.0, vfile@npm:^5.3.2":
   version: 5.3.7
   resolution: "vfile@npm:5.3.7"
@@ -9827,6 +10309,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 "vfile@npm:^6.0.0":
@@ -9843,6 +10326,8 @@ __metadata:
 =======
 >>>>>>> b3942c2 (🎉 Initialize Project (#3))
 =======
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
 "uuid@npm:^8.3.2":
   version: 8.3.2
   resolution: "uuid@npm:8.3.2"
@@ -9906,6 +10391,16 @@ __metadata:
     unist-util-stringify-position: ^3.0.0
     vfile-message: ^3.0.0
   checksum: 642cce703afc186dbe7cabf698dc954c70146e853491086f5da39e1ce850676fc96b169fcf7898aa3ff245e9313aeec40da93acd1e1fcc0c146dc4f6308b4ef9
+=======
+"vfile@npm:^6.0.0":
+  version: 6.0.1
+  resolution: "vfile@npm:6.0.1"
+  dependencies:
+    "@types/unist": ^3.0.0
+    unist-util-stringify-position: ^4.0.0
+    vfile-message: ^4.0.0
+  checksum: 05ccee73aeb00402bc8a5d0708af299e9f4a33f5132805449099295085e3ca3b0d018328bad9ff44cf2e6f4cd364f1d558d3fb9b394243a25b2739207edcb0ed
+>>>>>>> dcc3f2d (📦 mdx-js/loader, mdx-js/react, next/mdx)
   languageName: node
   linkType: hard
 

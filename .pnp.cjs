@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/usr/bin/env node
 /* eslint-disable */
 "use strict";
@@ -24407,3 +24408,5 @@ if (process.mainModule === module) {
 }
 
 module.exports = defaultApi;
+=======
+>>>>>>> ca705ac (📦 mdx-js/loader, mdx-js/react, next/mdx)
