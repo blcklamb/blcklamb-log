@@ -32,9 +32,27 @@ You can check it out on [YouTube](https://youtu.be/6Lxdp1R40EY).
 
 <br />
 
-<h1> Preservation Method </h1>
+<h1 className=""> Preservation Method </h1>
 
-Transfer the stock to a food storage container and store in the fridge. It can be used for 2-3 days.
+Transfer the stock to a food storage container and store in the fridge. It can
+be used for 2-3 days.
+
+```javascript
+var canVisitAllRooms = function (rooms) {
+  const isOpen = Array.from({ length: rooms.length }, (_, idx) => idx === 0);
+  const stack = [0];
+  while (stack.length) {
+    const current = stack.pop();
+    for (const roomKey of rooms[current]) {
+      if (!isOpen[roomKey]) {
+        isOpen[roomKey] = true;
+        stack.push(roomKey);
+      }
+    }
+  }
+  return isOpen.reduce((prev, ele) => prev && ele);
+};
+```
 
 <h1> Tips </h1>
 

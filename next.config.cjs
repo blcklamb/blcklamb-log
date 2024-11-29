@@ -8,6 +8,7 @@ const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ["@prisma/client"],
   },
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
 };
 
 module.exports = withContentlayer(nextConfig);

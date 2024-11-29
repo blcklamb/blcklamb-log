@@ -1,3 +1,5 @@
+"use client";
+
 const IconLoader = () => (
   <svg
     id="sprite-symbols"
