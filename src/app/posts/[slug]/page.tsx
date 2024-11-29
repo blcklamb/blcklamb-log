@@ -1,4 +1,6 @@
+import CodeBlock from "@/components/CodeBlock";
 import { allPosts } from "contentlayer/generated";
+import { MDXComponents } from "mdx/types";
 import { useMDXComponent } from "next-contentlayer/hooks";
 
 const getSinglePost = (slug: string) => {
@@ -8,6 +10,10 @@ const getSinglePost = (slug: string) => {
   return allPosts[singlePost];
 };
 
+const components: MDXComponents = {
+  pre: CodeBlock,
+};
+
 const PostPage = ({ params: { slug } }: { params: { slug: string } }) => {
   const singlePost = getSinglePost(slug);
 
@@ -15,7 +21,7 @@ const PostPage = ({ params: { slug } }: { params: { slug: string } }) => {
   return (
     <div>
       {singlePost.title}
-      <MDXContent />
+      <MDXContent components={components} />
     </div>
   );
 };
