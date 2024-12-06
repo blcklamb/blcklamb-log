@@ -36,9 +36,9 @@ const IconLoader = () => (
       <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
         <path
           fill="#FFFFF4"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           d="M3.293 6.707a1 1 0 0 1 1.414 0L12 14l7.293-7.293a1 1 0 0 1 1.414 0l.707.707a1 1 0 0 1 0 1.414l-8.353 8.354a1.5 1.5 0 0 1-2.122 0L2.586 8.828a1 1 0 0 1 0-1.414l.707-.707Z"
-          clip-rule="evenodd"
+          clipRule="evenodd"
         />
       </svg>
     </defs>

@@ -15,8 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="kr">
-      <IconLoader />
-      <body>{children}</body>
+      <body>
+        {children}
+        <IconLoader />
+      </body>
     </html>
   );
 }
