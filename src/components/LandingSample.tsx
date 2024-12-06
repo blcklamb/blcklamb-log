@@ -1,6 +1,6 @@
 "use client";
 
-import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
+import { Environment, useGLTF } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Suspense, useMemo, useRef, useState } from "react";
 import Loader from "./Loader";
@@ -30,7 +30,7 @@ function MovingModel({
   z: number;
   speed: number;
 }) {
-  const ref = useRef();
+  const ref = useRef<Mesh>(null!);
   const { viewport, camera } = useThree();
   // getCurrentViewport is a helper that calculates the size of the viewport
   const { width, height } = viewport.getCurrentViewport(camera, [0, 0, -z]);
