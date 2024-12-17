@@ -43,6 +43,17 @@ export default function LandingOverlay() {
           particleColor="#FFFFFF"
         />
       </div>
+      <div className="text-gray-400 text-xs z-10 absolute bottom-1 text-center w-full">
+        <span>
+          <a href="https://skfb.ly/oERRF">&quot;Sheep&quot;</a>
+        </span>
+        by Kinga Kroliczek is licensed under
+        <span>
+          <a href="http://creativecommons.org/licenses/by/4.0/">
+            Creative Commons Attribution
+          </a>
+        </span>
+      </div>
     </div>
   );
 }
