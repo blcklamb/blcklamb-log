@@ -81,12 +81,12 @@ function MovingModel({
 }
 
 export default function FloatingSheep() {
-  const count = 80;
+  const count = 120;
   const easing = (x: number) => Math.sqrt(1 - Math.pow(x - 1, 2));
   const [speed, setSpeed] = useState(1);
   return (
     <div className="bg-white h-screen relative">
-      <div className="absolute z-30 bottom-1/2 right-1 transform rotate-90">
+      <div className="absolute z-30 bottom-1/2 md:right-1 -right-6 transform rotate-90">
         <input
           type="range"
           min={0}
