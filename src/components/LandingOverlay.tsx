@@ -13,22 +13,24 @@ export default function LandingOverlay() {
         </span>
       </div>
       <div className="flex flex-col items-center justify-center">
-        <span className="absolute mx-auto py-4 flex border w-fit bg-gradient-to-r blur-xl from-blue-500 via-teal-500 to-pink-500 bg-clip-text text-6xl box-content font-extrabold text-transparent text-center select-none">
+        <span className="absolute mx-auto py-4 flex border w-fit bg-gradient-to-r blur-xl from-blue-500 via-teal-500 to-pink-500 bg-clip-text text-3xl md:text-6xl box-content font-extrabold text-transparent text-center select-none">
           BLCKLAMB.LOG
         </span>
-        <h1 className="relative top-0 w-fit h-auto py-4 justify-center flex bg-gradient-to-r items-center from-blue-500 via-teal-500 to-pink-500 bg-clip-text text-6xl font-extrabold text-transparent text-center select-auto">
+        <h1 className="relative top-0 w-fit h-auto py-4 justify-center flex bg-gradient-to-r items-center from-blue-500 via-teal-500 to-pink-500 bg-clip-text text-3xl md:text-6xl font-extrabold text-transparent text-center select-auto">
           BLCKLAMB.LOG
         </h1>
       </div>
       <div className="w-full flex justify-center">
-        <Link href="/posts/all" className="z-10">
-          <button
-            type="button"
-            className="font-bold px-4 py-2 rounded-sm bg-gray-700"
-          >
-            포스트 구경하기
-          </button>
-        </Link>
+        {/* // TODO: 포스트 완성 후 복구 */}
+        {/* <Link href="/posts/all" className="z-10"> */}
+        <button
+          disabled
+          type="button"
+          className="font-bold px-4 py-2 rounded-sm bg-gray-700"
+        >
+          포스트 구경하기
+        </button>
+        {/* </Link> */}
       </div>
       <div className="w-full absolute inset-0 h-screen">
         <SparklesCore
@@ -40,6 +42,17 @@ export default function LandingOverlay() {
           className="w-full h-full"
           particleColor="#FFFFFF"
         />
+      </div>
+      <div className="text-gray-400 text-xs z-10 absolute bottom-1 text-center w-full">
+        <span>
+          <a href="https://skfb.ly/oERRF">&quot;Sheep&quot;</a>
+        </span>
+        by Kinga Kroliczek is licensed under
+        <span>
+          <a href="http://creativecommons.org/licenses/by/4.0/">
+            Creative Commons Attribution
+          </a>
+        </span>
       </div>
     </div>
   );
