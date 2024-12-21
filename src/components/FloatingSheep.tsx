@@ -1,6 +1,6 @@
 "use client";
 
-import { OrbitControls } from "@react-three/drei";
+import { Environment, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { MovingModel } from "./MovingModel";
 import { useState } from "react";
@@ -34,6 +34,7 @@ export function FloatingSheep() {
           />
         ))}
         <ambientLight intensity={1} />
+        <Environment preset="forest" />
       </Canvas>
     </div>
   );
