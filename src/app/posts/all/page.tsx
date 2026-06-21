@@ -19,12 +19,15 @@ const getAllPosts = async (): Promise<PostMeta[]> => {
 const PostListPage = async () => {
   const postList = await getAllPosts();
   return (
-    <div>
+    <main className="mx-auto w-full max-w-3xl px-5 py-12">
       <title>All Posts</title>
-      {postList.map((post, idx) => (
-        <PostCard key={idx} post={post} />
-      ))}
-    </div>
+      <h1 className="mb-8 text-3xl font-bold text-slate-900">All Posts</h1>
+      <ul className="flex flex-col gap-6">
+        {postList.map((post, idx) => (
+          <PostCard key={idx} post={post} />
+        ))}
+      </ul>
+    </main>
   );
 };
 

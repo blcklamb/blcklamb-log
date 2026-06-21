@@ -10,7 +10,10 @@ const CodeBlock = (props: any) => {
   return (
     <Highlight theme={themes.dracula} code={children} language={language}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={style}>
+        <pre
+          className={`${className} overflow-x-auto rounded-lg p-4 text-sm leading-relaxed`}
+          style={style}
+        >
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line })}>
               {line.map((token, key) => (

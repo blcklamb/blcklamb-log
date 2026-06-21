@@ -1318,6 +1318,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tailwindcss/typography@npm:^0.5.20":
+  version: 0.5.20
+  resolution: "@tailwindcss/typography@npm:0.5.20"
+  dependencies:
+    postcss-selector-parser: "npm:6.0.10"
+  peerDependencies:
+    tailwindcss: "*"
+  checksum: 10/0a568b11b7bf294bc31b6a870bcd319027f7be4dff6c064eeae7c2dba31ddaffcf08f3bbe21f356f583b3f97f767a12fef9445547d6a8539dd7915a16eaad5ec
+  languageName: node
+  linkType: hard
+
 "@tsparticles/basic@npm:3.7.1":
   version: 3.7.1
   resolution: "@tsparticles/basic@npm:3.7.1"
@@ -6582,6 +6593,7 @@ __metadata:
     "@react-three/drei": "npm:^9.119.0"
     "@react-three/fiber": "npm:^8.17.10"
     "@react-three/postprocessing": "npm:^2.16.3"
+    "@tailwindcss/typography": "npm:^0.5.20"
     "@tsparticles/engine": "npm:^3.7.1"
     "@tsparticles/react": "npm:^3.0.0"
     "@tsparticles/slim": "npm:^3.7.1"
@@ -7024,6 +7036,16 @@ __metadata:
   peerDependencies:
     postcss: ^8.2.14
   checksum: 10/d7f6ba6bfd03d42f84689a0630d4e393c421bb53723f16fe179a840f03ed17763b0fe494458577d2a015e857e0ec27c7e194909ffe209ee5f0676aec39737317
+  languageName: node
+  linkType: hard
+
+"postcss-selector-parser@npm:6.0.10":
+  version: 6.0.10
+  resolution: "postcss-selector-parser@npm:6.0.10"
+  dependencies:
+    cssesc: "npm:^3.0.0"
+    util-deprecate: "npm:^1.0.2"
+  checksum: 10/f8ad9beb764a64b51a8027650e745a44ed7198f0b968b823db9563a54990924bcf9eb6fb59fbbb7eb05a89b2b6a24b81b2b7d60ecadda15b04a0024c7663f436
   languageName: node
   linkType: hard
 
