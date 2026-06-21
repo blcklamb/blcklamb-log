@@ -21,13 +21,11 @@ export default function LandingOverlay() {
         </h1>
       </div>
       <div className="w-full flex justify-center">
-        <Link href="/posts/all" className="z-10">
-          <button
-            type="button"
-            className="font-bold px-4 py-2 rounded-sm bg-gray-700"
-          >
-            포스트 구경하기
-          </button>
+        <Link
+          href="/posts/all"
+          className="z-10 rounded-sm bg-gray-700 px-4 py-2 font-bold"
+        >
+          포스트 구경하기
         </Link>
       </div>
       <div className="w-full absolute inset-0 h-screen">

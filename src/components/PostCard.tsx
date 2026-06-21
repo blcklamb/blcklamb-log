@@ -1,4 +1,4 @@
-import { PostMeta } from "@/app/posts/all/page";
+import type { PostMeta } from "@/app/posts/all/page";
 import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,7 +18,7 @@ export const PostCard = ({ post }: PostCard) => {
         {thumbnail && (
           <Image
             src={thumbnail}
-            alt="thumbnail"
+            alt={`${title} thumbnail`}
             width={96}
             height={96}
             className="h-24 w-24 shrink-0 rounded-lg object-cover"
