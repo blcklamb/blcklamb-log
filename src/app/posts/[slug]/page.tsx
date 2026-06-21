@@ -1,4 +1,5 @@
 import CodeBlock from "@/components/CodeBlock";
+import Comments from "@/components/Comments";
 import { allPosts } from "contentlayer/generated";
 import { format } from "date-fns";
 import { MDXComponents } from "mdx/types";
@@ -48,6 +49,7 @@ const PostPage = ({ params: { slug } }: { params: { slug: string } }) => {
       <div className="prose prose-slate max-w-none">
         <MDXContent components={components} />
       </div>
+      <Comments />
     </article>
   );
 };
