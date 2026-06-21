@@ -21,16 +21,14 @@ export default function LandingOverlay() {
         </h1>
       </div>
       <div className="w-full flex justify-center">
-        {/* // TODO: 포스트 완성 후 복구 */}
-        {/* <Link href="/posts/all" className="z-10"> */}
-        <button
-          disabled
-          type="button"
-          className="font-bold px-4 py-2 rounded-sm bg-gray-700"
-        >
-          포스트 구경하기
-        </button>
-        {/* </Link> */}
+        <Link href="/posts/all" className="z-10">
+          <button
+            type="button"
+            className="font-bold px-4 py-2 rounded-sm bg-gray-700"
+          >
+            포스트 구경하기
+          </button>
+        </Link>
       </div>
       <div className="w-full absolute inset-0 h-screen">
         <SparklesCore
