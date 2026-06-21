@@ -4,13 +4,13 @@ import { allPosts } from "contentlayer/generated";
 import { format } from "date-fns";
 import { MDXComponents } from "mdx/types";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import { notFound } from "next/navigation";
 
-const getSinglePost = (slug: string) => {
-  const singlePost = allPosts.findIndex(
-    (doc) => doc._raw.flattenedPath === slug
-  );
-  return allPosts[singlePost];
-};
+const getSinglePost = (slug: string) =>
+  allPosts.find((doc) => doc._raw.flattenedPath === slug);
+
+export const generateStaticParams = () =>
+  allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
 
 const components: MDXComponents = {
   pre: CodeBlock,
@@ -18,6 +18,10 @@ const components: MDXComponents = {
 
 const PostPage = ({ params: { slug } }: { params: { slug: string } }) => {
   const singlePost = getSinglePost(slug);
+
+  if (!singlePost) {
+    notFound();
+  }
 
   const MDXContent = useMDXComponent(singlePost.body.code);
   return (
