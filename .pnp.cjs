@@ -52,7 +52,6 @@ const RAW_RUNTIME_STATE =
           ["gray-matter", "npm:4.0.3"],\
           ["next", "virtual:e91ec02275bd0144ade07057ef89569f014e178022af3b2329ed26fcad7dc05c98c79938316f8116116d103591ab977d45fc4025073d22dc7363d5a6f1b0fa99#npm:13.4.9"],\
           ["next-contentlayer", "virtual:e91ec02275bd0144ade07057ef89569f014e178022af3b2329ed26fcad7dc05c98c79938316f8116116d103591ab977d45fc4025073d22dc7363d5a6f1b0fa99#npm:0.3.4"],\
-          ["next-mdx-remote", "virtual:e91ec02275bd0144ade07057ef89569f014e178022af3b2329ed26fcad7dc05c98c79938316f8116116d103591ab977d45fc4025073d22dc7363d5a6f1b0fa99#npm:4.4.1"],\
           ["postcss", "npm:8.4.25"],\
           ["prism-react-renderer", "virtual:e91ec02275bd0144ade07057ef89569f014e178022af3b2329ed26fcad7dc05c98c79938316f8116116d103591ab977d45fc4025073d22dc7363d5a6f1b0fa99#npm:2.4.0"],\
           ["react", "npm:18.2.0"],\
@@ -899,13 +898,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@mdx-js/react", [\
-      ["npm:2.3.0", {\
-        "packageLocation": "./.yarn/cache/@mdx-js-react-npm-2.3.0-d5582a450b-bce1cb1dde.zip/node_modules/@mdx-js/react/",\
-        "packageDependencies": [\
-          ["@mdx-js/react", "npm:2.3.0"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
       ["npm:3.1.0", {\
         "packageLocation": "./.yarn/cache/@mdx-js-react-npm-3.1.0-a91217d996-cf89d6392c.zip/node_modules/@mdx-js/react/",\
         "packageDependencies": [\
@@ -917,20 +909,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@mdx-js-react-virtual-a29923d074/0/cache/@mdx-js-react-npm-3.1.0-a91217d996-cf89d6392c.zip/node_modules/@mdx-js/react/",\
         "packageDependencies": [\
           ["@mdx-js/react", "virtual:e91ec02275bd0144ade07057ef89569f014e178022af3b2329ed26fcad7dc05c98c79938316f8116116d103591ab977d45fc4025073d22dc7363d5a6f1b0fa99#npm:3.1.0"],\
-          ["@types/mdx", "npm:2.0.13"],\
-          ["@types/react", "npm:18.2.14"],\
-          ["react", "npm:18.2.0"]\
-        ],\
-        "packagePeers": [\
-          "@types/react",\
-          "react"\
-        ],\
-        "linkType": "HARD"\
-      }],\
-      ["virtual:f37bf82886edf381a529668333e52b68b70abd976df7ee38dc10e616f215540a04d9a3a146f45452a2dc950b7a5feea21d173ec3d7801a679418550edc570677#npm:2.3.0", {\
-        "packageLocation": "./.yarn/__virtual__/@mdx-js-react-virtual-827b331128/0/cache/@mdx-js-react-npm-2.3.0-d5582a450b-bce1cb1dde.zip/node_modules/@mdx-js/react/",\
-        "packageDependencies": [\
-          ["@mdx-js/react", "virtual:f37bf82886edf381a529668333e52b68b70abd976df7ee38dc10e616f215540a04d9a3a146f45452a2dc950b7a5feea21d173ec3d7801a679418550edc570677#npm:2.3.0"],\
           ["@types/mdx", "npm:2.0.13"],\
           ["@types/react", "npm:18.2.14"],\
           ["react", "npm:18.2.0"]\
@@ -2533,15 +2511,6 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@types/hast", "npm:3.0.4"],\
           ["@types/unist", "npm:3.0.3"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@types/js-yaml", [\
-      ["npm:4.0.9", {\
-        "packageLocation": "./.yarn/cache/@types-js-yaml-npm-4.0.9-6a16d01bd2-a0ce595db8.zip/node_modules/@types/js-yaml/",\
-        "packageDependencies": [\
-          ["@types/js-yaml", "npm:4.0.9"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -8075,36 +8044,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["next-mdx-remote", [\
-      ["npm:4.4.1", {\
-        "packageLocation": "./.yarn/cache/next-mdx-remote-npm-4.4.1-2a17ed923a-89d18095f6.zip/node_modules/next-mdx-remote/",\
-        "packageDependencies": [\
-          ["next-mdx-remote", "npm:4.4.1"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:e91ec02275bd0144ade07057ef89569f014e178022af3b2329ed26fcad7dc05c98c79938316f8116116d103591ab977d45fc4025073d22dc7363d5a6f1b0fa99#npm:4.4.1", {\
-        "packageLocation": "./.yarn/__virtual__/next-mdx-remote-virtual-f37bf82886/0/cache/next-mdx-remote-npm-4.4.1-2a17ed923a-89d18095f6.zip/node_modules/next-mdx-remote/",\
-        "packageDependencies": [\
-          ["next-mdx-remote", "virtual:e91ec02275bd0144ade07057ef89569f014e178022af3b2329ed26fcad7dc05c98c79938316f8116116d103591ab977d45fc4025073d22dc7363d5a6f1b0fa99#npm:4.4.1"],\
-          ["@mdx-js/mdx", "npm:2.3.0"],\
-          ["@mdx-js/react", "virtual:f37bf82886edf381a529668333e52b68b70abd976df7ee38dc10e616f215540a04d9a3a146f45452a2dc950b7a5feea21d173ec3d7801a679418550edc570677#npm:2.3.0"],\
-          ["@types/react", "npm:18.2.14"],\
-          ["@types/react-dom", "npm:18.2.6"],\
-          ["react", "npm:18.2.0"],\
-          ["react-dom", "virtual:e91ec02275bd0144ade07057ef89569f014e178022af3b2329ed26fcad7dc05c98c79938316f8116116d103591ab977d45fc4025073d22dc7363d5a6f1b0fa99#npm:18.2.0"],\
-          ["vfile", "npm:5.3.7"],\
-          ["vfile-matter", "npm:3.0.1"]\
-        ],\
-        "packagePeers": [\
-          "@types/react-dom",\
-          "@types/react",\
-          "react-dom",\
-          "react"\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["nextjs-portfolio", [\
       ["workspace:.", {\
         "packageLocation": "./",\
@@ -8135,7 +8074,6 @@ const RAW_RUNTIME_STATE =
           ["gray-matter", "npm:4.0.3"],\
           ["next", "virtual:e91ec02275bd0144ade07057ef89569f014e178022af3b2329ed26fcad7dc05c98c79938316f8116116d103591ab977d45fc4025073d22dc7363d5a6f1b0fa99#npm:13.4.9"],\
           ["next-contentlayer", "virtual:e91ec02275bd0144ade07057ef89569f014e178022af3b2329ed26fcad7dc05c98c79938316f8116116d103591ab977d45fc4025073d22dc7363d5a6f1b0fa99#npm:0.3.4"],\
-          ["next-mdx-remote", "virtual:e91ec02275bd0144ade07057ef89569f014e178022af3b2329ed26fcad7dc05c98c79938316f8116116d103591ab977d45fc4025073d22dc7363d5a6f1b0fa99#npm:4.4.1"],\
           ["postcss", "npm:8.4.25"],\
           ["prism-react-renderer", "virtual:e91ec02275bd0144ade07057ef89569f014e178022af3b2329ed26fcad7dc05c98c79938316f8116116d103591ab977d45fc4025073d22dc7363d5a6f1b0fa99#npm:2.4.0"],\
           ["react", "npm:18.2.0"],\
@@ -10646,18 +10584,6 @@ const RAW_RUNTIME_STATE =
           ["vfile-location", "npm:4.1.0"],\
           ["@types/unist", "npm:2.0.11"],\
           ["vfile", "npm:5.3.7"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["vfile-matter", [\
-      ["npm:3.0.1", {\
-        "packageLocation": "./.yarn/cache/vfile-matter-npm-3.0.1-9d8d8bf427-ced55ed7d7.zip/node_modules/vfile-matter/",\
-        "packageDependencies": [\
-          ["vfile-matter", "npm:3.0.1"],\
-          ["@types/js-yaml", "npm:4.0.9"],\
-          ["is-buffer", "npm:2.0.5"],\
-          ["js-yaml", "npm:4.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
