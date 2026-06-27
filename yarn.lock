@@ -33,6 +33,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@contentlayer/cli@patch:@contentlayer/cli@npm%3A0.3.4#~/.yarn/patches/@contentlayer-cli-npm-0.3.4-b769cbc5d9.patch":
+  version: 0.3.4
+  resolution: "@contentlayer/cli@patch:@contentlayer/cli@npm%3A0.3.4#~/.yarn/patches/@contentlayer-cli-npm-0.3.4-b769cbc5d9.patch::version=0.3.4&hash=b7711c"
+  dependencies:
+    "@contentlayer/core": "npm:0.3.4"
+    "@contentlayer/utils": "npm:0.3.4"
+    clipanion: "npm:^3.2.1"
+    typanion: "npm:^3.12.1"
+  checksum: 10/3dbb997702b35b81fd8ce121d5583397f3f3e941ba172d5e9f0b7736e4fcda09ac36b79af635dada920b3e5d1d89f78bb6feb2d0979b472cc368dc589db74f0e
+  languageName: node
+  linkType: hard
+
 "@contentlayer/client@npm:0.3.4":
   version: 0.3.4
   resolution: "@contentlayer/client@npm:0.3.4"

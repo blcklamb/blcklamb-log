@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "contentlayer dev & next dev",
-    "build": "contentlayer build & next build",
+    "build": "contentlayer build && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -47,5 +47,8 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.20",
     "@types/mdx": "^2.0.11"
+  },
+  "resolutions": {
+    "@contentlayer/cli@npm:0.3.4": "patch:@contentlayer/cli@npm%3A0.3.4#~/.yarn/patches/@contentlayer-cli-npm-0.3.4-b769cbc5d9.patch"
   }
 }
