@@ -1,4 +1,5 @@
 import IconLoader from "@/components/IconLoader";
+import SiteHeader from "@/components/SiteHeader";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 
@@ -14,8 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="kr">
-      <body>
+    <html lang="ko">
+      <body className="font-sans antialiased">
+        <SiteHeader />
         {children}
         <IconLoader />
       </body>

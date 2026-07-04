@@ -35,7 +35,7 @@ export default function Comments() {
     script.setAttribute("data-reactions-enabled", "1");
     script.setAttribute("data-emit-metadata", "0");
     script.setAttribute("data-input-position", "bottom");
-    script.setAttribute("data-theme", "light");
+    script.setAttribute("data-theme", "dark_dimmed");
     script.setAttribute("data-lang", "ko");
     script.setAttribute("data-loading", "lazy");
     container.appendChild(script);
@@ -44,15 +44,15 @@ export default function Comments() {
   const isConfigured = repo && repoId && category && categoryId;
 
   return (
-    <section className="mt-16 border-t border-slate-200 pt-10">
-      <h2 className="mb-6 text-xl font-bold text-slate-900">댓글</h2>
+    <section className="mt-16 border-t border-white/10 pt-10">
+      <h2 className="mb-6 text-xl font-bold text-slate-100">댓글</h2>
       {isConfigured ? (
         <div className="giscus" ref={ref} />
       ) : (
-        <p className="text-sm text-slate-500">
-          댓글을 사용하려면 <code className="rounded bg-slate-100 px-1">.env.local</code>에
-          Giscus 설정(<code className="rounded bg-slate-100 px-1">NEXT_PUBLIC_GISCUS_*</code>)을
-          추가하세요. 자세한 내용은 <code className="rounded bg-slate-100 px-1">.env.example</code>를 참고하세요.
+        <p className="text-sm text-slate-400">
+          댓글을 사용하려면 <code className="rounded bg-white/10 px-1 text-slate-200">.env.local</code>에
+          Giscus 설정(<code className="rounded bg-white/10 px-1 text-slate-200">NEXT_PUBLIC_GISCUS_*</code>)을
+          추가하세요. 자세한 내용은 <code className="rounded bg-white/10 px-1 text-slate-200">.env.example</code>를 참고하세요.
         </p>
       )}
     </section>
