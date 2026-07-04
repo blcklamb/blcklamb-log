@@ -8,6 +8,7 @@ import {
   Vignette,
 } from "@react-three/postprocessing";
 import { MovingModel } from "./MovingModel";
+import { MovingUfo } from "./MovingUfo";
 import { useState } from "react";
 
 const SPACE = "#05060d";
@@ -45,11 +46,15 @@ export function FloatingSheep() {
         <color attach="background" args={[SPACE]} />
         <fog attach="fog" args={[SPACE, 22, 95]} />
 
+        {/* 카메라는 양 떼 중심(z ≈ -40)을 바라보며, 이동은 z축 dolly만 허용한다. */}
         <OrbitControls
+          target={[0, 0, -40]}
+          enableRotate={false}
           enablePan={false}
-          enableZoom={false}
-          autoRotate
-          autoRotateSpeed={0.25}
+          enableZoom
+          zoomSpeed={0.6}
+          minDistance={6}
+          maxDistance={62}
         />
 
         <ambientLight intensity={0.35} />
@@ -65,6 +70,9 @@ export function FloatingSheep() {
             speed={speed}
           />
         ))}
+
+        {/* 양 떼 사이를 가로질러 비행하는 UFO 한 대 */}
+        <MovingUfo z={26} />
 
         <Environment preset="night" />
 
