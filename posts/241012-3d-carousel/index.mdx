@@ -1,0 +1,374 @@
+---
+title: "3D 캐러샐을 만들어 보자"
+description: react-spring-3d-carousel을 함수형 컴포넌트로 재구성하며 3D 캐러샐의 구조, 라이프사이클 마이그레이션, 클릭·스와이프 이벤트와 트러블슈팅을 정리합니다.
+postedAt: "2024-10-12"
+readTime: 12
+hashTags: ["React", "TROUBLESHOOTING", "web"]
+---
+
+> 24.10.22 업데이트: iOS 모바일 환경에서 glitch가 있는 코드입니다. 실제 서비스에 적용한다면 터치 이벤트와 애니메이션 동작을 별도로 검증하는 것을 권장합니다.
+
+## 개요
+
+이번 포스팅에서는 `react-spring`을 이용해 3D 캐러샐을 구현한 과정을 정리한다.
+
+처음에는 [`react-spring-3d-carousel`](https://www.npmjs.com/package/react-spring-3d-carousel)을 그대로 사용할 생각이었다.
+하지만 내비게이션 버튼을 원하는 방식으로 제어하거나 스타일을 커스텀하기 어려웠고, 프로젝트 요구사항에 맞게 수정하려면 내부 구현을 직접 이해해야 했다.
+결국 라이브러리의 동작 방식을 참고하되, class component 기반 코드를 function component 중심으로 다시 작성하는 방향을 선택했다.
+
+- [구경하러 가기](https://prepare-assignment-test-tomv.vercel.app/)
+- [원문 Velog 글](https://velog.io/@blcklamb/3D-%EC%BA%90%EB%9F%AC%EC%83%90%EC%9D%84-%EB%A7%8C%EB%93%A4%EC%96%B4-%EB%B3%B4%EC%9E%90)
+
+## 3D 캐러샐?
+
+캐러샐은 여러 콘텐츠를 일정한 순서로 넘겨 보여주는 UI이다.
+이미지, 카드, 배너처럼 동일한 형태의 콘텐츠를 반복적으로 노출해야 할 때 자주 사용한다.
+넷플릭스나 웹툰 서비스처럼 콘텐츠가 많은 서비스의 랜딩 페이지에서 특히 흔하게 볼 수 있다.
+
+3D 캐러샐은 여기에 깊이감을 더한 형태다.
+일반적인 캐러샐이 좌우 방향으로 콘텐츠를 넘기는 데 집중한다면, 3D 캐러샐은 현재 선택된 카드가 앞쪽에 있고 나머지 카드가 뒤로 밀려난 것처럼 보이게 만든다.
+
+CSS 3D transform만으로도 회전목마처럼 중앙을 기준으로 둥글게 배치되는 캐러샐을 만들 수 있다.
+다만 이번 구현에서는 각 이미지가 모두 같은 방향을 바라보면서, 위치와 스케일의 차이로 깊이를 표현하는 형태를 목표로 했다.
+
+## 사용한 기술 스택
+
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![React Spring](https://img.shields.io/badge/react%20spring-pink?style=for-the-badge&logo=commonworkflowlanguage&logoColor=black)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+
+## 개발 환경 세팅
+
+프로젝트는 Vite의 React + TypeScript 템플릿으로 시작했다.
+
+```bash
+npm create vite@latest {프로젝트 폴더 명} -- --template react-ts
+cd {프로젝트 폴더 명}
+npm i react-spring react-icons
+npm i -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+TailwindCSS는 `content` 경로와 전역 CSS import만 잡아두면 된다.
+Vite 템플릿에서 기본으로 생성된 `App.css` 같은 파일은 필요하지 않아 제거했다.
+
+```ts
+// tailwind.config.ts
+import type { Config } from "tailwindcss";
+
+export default {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+} satisfies Config;
+```
+
+이미지는 정적 파일로 준비했다.
+이번 구현의 핵심은 이미지 자체가 아니라 카드가 이동하는 방식이므로, 이미지는 로컬 asset으로 관리해도 충분하다.
+
+## 기본 구조
+
+캐러샐은 크게 다섯 부분으로 나누었다.
+
+- `CarouselContainer`: 현재 선택된 slide index와 터치 이벤트 상태를 관리한다.
+- `Carousel`: slide 목록과 이전/다음 버튼을 배치한다.
+- `NavigationButton`: 이전/다음 이동 버튼이다.
+- `Slide`: 위치, 크기, 투명도 같은 애니메이션 값을 계산해 적용한다.
+- `SlideContent`: 실제 이미지 콘텐츠를 렌더링한다.
+
+컨테이너에서 이미지 배열을 slide 모델로 바꾼 뒤, 하위 컴포넌트에 전달하는 방식이다.
+
+```tsx
+interface CarouselContainerProps {
+  images: string[];
+}
+
+export default function CarouselContainer({ images }: CarouselContainerProps) {
+  const [targetIndex, setTargetIndex] = useState(0);
+
+  const slides = images.map((src, index) => ({
+    key: index,
+    content: <SlideContent src={src} index={index} />,
+    onClick: () => setTargetIndex(index),
+  }));
+
+  return (
+    <section className="w-full overflow-hidden">
+      <Carousel
+        slides={slides}
+        targetIndex={targetIndex}
+        onChangeTarget={setTargetIndex}
+      />
+    </section>
+  );
+}
+```
+
+처음에는 마크업만 붙여서 각 slide가 정상적으로 렌더되는지 확인했다.
+애니메이션을 붙이기 전에는 단순히 이미지와 버튼이 화면에 놓이는지만 보면 된다.
+구조가 안정된 뒤에 위치 계산과 이벤트 처리를 얹는 편이 디버깅하기 쉽다.
+
+## Class Component 분석
+
+참고한 라이브러리는 class component를 중심으로 작성되어 있었다.
+요즘 React 코드에서는 hooks를 사용하는 경우가 대부분이라 class component를 직접 작성할 일은 많지 않다.
+하지만 오래된 라이브러리나 레거시 코드에서는 여전히 만날 수 있기 때문에, 어떤 라이프사이클 메서드가 어떤 역할을 하는지 파악하는 과정이 필요했다.
+
+### componentDidUpdate
+
+`componentDidUpdate`는 컴포넌트가 업데이트된 뒤 실행된다.
+첫 렌더링에는 실행되지 않고, props나 state가 바뀐 이후 필요한 작업을 처리할 때 사용한다.
+
+캐러샐에서는 target slide가 바뀌었을 때 다음 애니메이션을 준비해야 한다.
+function component에서는 dependency가 있는 `useEffect`로 같은 흐름을 만들 수 있다.
+
+```tsx
+useEffect(() => {
+  if (previousTargetIndex.current === targetIndex) {
+    return;
+  }
+
+  previousTargetIndex.current = targetIndex;
+  startSlideTransition(targetIndex);
+}, [targetIndex]);
+```
+
+### componentWillUnmount
+
+`componentWillUnmount`는 컴포넌트가 사라지기 직전에 실행된다.
+타이머를 정리하거나 외부 구독을 해제할 때 사용한다.
+
+캐러샐처럼 animation delay를 위해 `setTimeout`을 사용한다면, 컴포넌트가 unmount될 때 `clearTimeout`이 필요하다.
+hooks에서는 `useEffect`의 cleanup 함수로 정리한다.
+
+```tsx
+useEffect(() => {
+  const timer = window.setTimeout(() => {
+    setIsAnimating(false);
+  }, animationDuration);
+
+  return () => {
+    window.clearTimeout(timer);
+  };
+}, [animationDuration, targetIndex]);
+```
+
+### getDerivedStateFromProps
+
+`getDerivedStateFromProps`는 props 변화에 따라 state를 동기화해야 할 때 사용된다.
+흔히 필요한 패턴은 아니지만, 캐러샐처럼 현재 target slide를 기준으로 각 slide의 상대 위치를 다시 계산해야 하는 경우에는 비슷한 작업이 발생한다.
+
+function component에서는 계산 가능한 값이라면 `useMemo`로 파생시키고, 실제 상태 변경이 필요할 때만 `useEffect`를 둔다.
+
+```tsx
+const orderedSlides = useMemo(() => {
+  return slides.map((slide, index) => ({
+    ...slide,
+    offset: getSlideOffset(index, targetIndex, slides.length),
+  }));
+}, [slides, targetIndex]);
+```
+
+핵심은 props를 state로 무조건 복사하지 않는 것이다.
+매 렌더마다 계산할 수 있는 값은 계산값으로 두고, 애니메이션 진행 여부처럼 시간에 따라 변하는 값만 state로 관리하는 편이 덜 복잡하다.
+
+## Function Component로 마이그레이션
+
+마이그레이션은 대략 다음 기준으로 진행했다.
+
+- class의 `state`는 `useState`로 변경한다.
+- 이전 값을 기억해야 하는 값은 `useRef`를 사용한다.
+- lifecycle method는 목적에 따라 `useEffect` 또는 `useMemo`로 옮긴다.
+- 이벤트 핸들러는 컨테이너에서 관리하고, 렌더링 컴포넌트에는 필요한 props만 전달한다.
+
+예를 들어 현재 slide를 변경하는 로직은 컨테이너에서 가지고 있고, `Carousel`은 사용자가 이전/다음 버튼을 눌렀다는 사실만 알려준다.
+
+```tsx
+const movePrev = () => {
+  setTargetIndex((current) => (current - 1 + slides.length) % slides.length);
+};
+
+const moveNext = () => {
+  setTargetIndex((current) => (current + 1) % slides.length);
+};
+```
+
+이렇게 하면 버튼 클릭, slide 클릭, swipe 이벤트가 모두 같은 상태 변경 함수를 공유할 수 있다.
+이벤트의 출처는 달라도 결과는 target index 변경으로 수렴한다.
+
+## react-spring 적용
+
+각 slide는 target slide와의 거리에 따라 위치와 크기가 달라진다.
+앞에 있는 slide는 크게, 뒤에 있는 slide는 작고 흐리게 보이도록 만든다.
+
+```tsx
+const style = useSpring({
+  transform: `translate3d(${x}px, 0, ${z}px) scale(${scale})`,
+  opacity,
+  config: {
+    tension: 220,
+    friction: 28,
+  },
+});
+
+return (
+  <animated.div
+    style={{
+      ...style,
+      zIndex,
+      position: "absolute",
+    }}
+  >
+    {content}
+  </animated.div>
+);
+```
+
+중요한 값은 `offset`이다.
+현재 target slide를 기준으로 각 slide가 얼마나 떨어져 있는지 계산하고, 그 값으로 `x`, `z`, `scale`, `opacity`, `zIndex`를 만든다.
+
+```ts
+const getSlideOffset = (
+  slideIndex: number,
+  targetIndex: number,
+  slideCount: number
+) => {
+  const rawOffset = slideIndex - targetIndex;
+  const half = Math.floor(slideCount / 2);
+
+  if (rawOffset > half) {
+    return rawOffset - slideCount;
+  }
+
+  if (rawOffset < -half) {
+    return rawOffset + slideCount;
+  }
+
+  return rawOffset;
+};
+```
+
+이 정규화가 없으면 마지막 이미지에서 첫 이미지로 넘어갈 때 멀리 돌아가는 것처럼 보이거나, 좌우 배치가 대칭적으로 보이지 않을 수 있다.
+
+## 클릭 이벤트와 터치 이벤트
+
+사용자는 세 가지 방식으로 캐러샐을 조작할 수 있어야 했다.
+
+- 이전/다음 버튼 클릭
+- 뒤에 있는 이미지 클릭
+- 모바일에서 좌우 swipe
+
+버튼과 이미지 클릭은 target index만 바꾸면 되므로 단순하다.
+문제는 swipe였다.
+
+터치가 시작될 때 좌표를 저장하고, 움직이는 동안 x축 변화량과 y축 변화량을 비교했다.
+수평 이동이 더 크면 좌우 swipe로 판단하고 target index를 변경했다.
+
+```tsx
+const touchStart = useRef<{ x: number; y: number } | null>(null);
+
+const handleTouchStart = (event: TouchEvent<HTMLDivElement>) => {
+  const touch = event.touches.item(0);
+
+  if (!touch) {
+    return;
+  }
+
+  touchStart.current = {
+    x: touch.clientX,
+    y: touch.clientY,
+  };
+};
+
+const handleTouchMove = (event: TouchEvent<HTMLDivElement>) => {
+  const start = touchStart.current;
+  const touch = event.touches.item(0);
+
+  if (!start || !touch) {
+    return;
+  }
+
+  const diffX = start.x - touch.clientX;
+  const diffY = start.y - touch.clientY;
+
+  if (Math.abs(diffX) <= Math.abs(diffY)) {
+    return;
+  }
+
+  if (diffX > 0) {
+    moveNext();
+  } else {
+    movePrev();
+  }
+
+  touchStart.current = null;
+};
+```
+
+이 방식은 구현이 간단하지만, 실제 모바일 브라우저에서는 더 많은 예외가 생길 수 있다.
+특히 iOS Safari에서는 스크롤, 터치, transform animation이 동시에 얽힐 때 glitch가 발생할 수 있으므로 별도 테스트가 필요하다.
+
+## Trouble Shooting
+
+### 1. 이미지를 눌러도 이동하지 않는 문제
+
+이미지 클릭 이벤트를 연결했는데도 slide가 이동하지 않았다.
+원인은 내비게이션 버튼을 감싸는 레이어가 전체 영역을 덮고 있었기 때문이다.
+버튼 wrapper에 높은 `z-index`가 걸려 있어서 이미지 클릭을 가로막고 있었다.
+
+해결은 단순했다.
+전체 wrapper가 아니라 실제 버튼에만 `z-index`를 적용했다.
+이렇게 하면 버튼은 계속 클릭할 수 있고, 버튼이 아닌 영역에서는 이미지가 클릭 이벤트를 받을 수 있다.
+
+### 2. 이미지 위치가 비대칭으로 보이는 문제
+
+slide 위치가 한쪽으로 치우쳐 보이는 문제가 있었다.
+현재 slide와 target slide 사이의 거리 계산이 충분히 정규화되지 않아, 앞뒤 관계가 바뀌는 경계에서 위치가 어색해졌다.
+
+해결 방향은 `getDefaultTranslateX`에 해당하는 위치 계산 함수를 다시 작성하는 것이었다.
+slide 개수, 현재 index, target index를 기준으로 offset을 먼저 정규화하고, 그 offset을 이용해 x축 위치를 계산했다.
+
+```ts
+const getTranslateX = (offset: number, baseGap: number) => {
+  const direction = Math.sign(offset);
+  const distance = Math.abs(offset);
+
+  if (distance === 0) {
+    return 0;
+  }
+
+  return direction * baseGap * Math.pow(0.82, distance - 1);
+};
+```
+
+앞쪽 slide는 넓게 벌리고, 뒤쪽 slide는 점점 간격을 줄이면 깊이감이 더 자연스럽게 보인다.
+정답이 있는 값이라기보다는 이미지 크기와 화면 폭에 맞춰 조정해야 하는 값에 가깝다.
+
+## Further Issue
+
+아직 더 다듬을 수 있는 부분이 남아 있다.
+
+- 애니메이션 config를 외부에서 바꿀 수 있게 만들기
+- 화면에 보이는 slide 개수를 옵션으로 분리하기
+- 내비게이션 버튼을 완전히 커스텀할 수 있도록 열어두기
+- props drilling이 많은 값을 context로 정리하기
+- iOS 모바일 glitch 원인을 더 좁혀보기
+
+이 정도까지 정리하면 작은 라이브러리 형태로 분리해도 괜찮을 것 같다.
+
+## 소감
+
+요즘 프로젝트에서 class component를 직접 작성할 일은 거의 없다.
+그렇다고 class component를 전혀 몰라도 된다는 뜻은 아니다.
+라이브러리나 오래된 코드베이스를 열어보면 lifecycle method가 여전히 등장할 수 있다.
+
+이번 구현에서 가장 좋았던 점은 class component를 function component로 옮기는 과정 자체보다, 기존 코드가 어떤 상태를 왜 들고 있는지 추적해본 경험이었다.
+캐러샐은 겉보기에는 단순한 UI지만, 클릭·터치·애니메이션·배치 계산이 함께 움직여야 해서 생각보다 상태 흐름이 중요했다.
+
+인터랙션이 있는 UI는 구현할수록 작은 디테일이 눈에 들어온다.
+앞으로도 이런 동작을 직접 뜯어보고, 필요한 만큼 다시 조립해보는 시도를 더 해보고 싶다.
