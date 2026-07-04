@@ -8,7 +8,7 @@ export default function SiteFooter() {
         <div className="flex items-center gap-2">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-aurora" />
           <span>
-            <span className="text-slate-300">blcklamb</span>.log
+            <span className="text-slate-300">blog.blcklamb</span>
           </span>
         </div>
         <div className="flex items-center gap-5">

@@ -14,8 +14,7 @@ export default function SiteHeader() {
           className="group inline-flex items-center gap-2 text-sm font-semibold tracking-tight"
         >
           <span className="inline-block h-2 w-2 rounded-full bg-aurora shadow-glow-cyan transition-transform duration-300 group-hover:scale-125" />
-          <span className="text-slate-100">blcklamb</span>
-          <span className="text-slate-500">.log</span>
+          <span className="text-slate-100">blog.blcklamb</span>
         </Link>
         <nav className="flex items-center gap-1 text-sm">
           <Link

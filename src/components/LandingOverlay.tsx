@@ -34,11 +34,6 @@ export default function LandingOverlay() {
             BLOG.BLCKLAMB
           </h1>
         </div>
-
-        <p className="mt-5 max-w-md animate-fade-up text-balance text-sm leading-relaxed text-slate-400 [animation-delay:320ms]">
-          프론트엔드 학습과 기록을 우주처럼 떠다니는 노트로 남깁니다.
-        </p>
-
         <div className="pointer-events-auto mt-9 flex animate-fade-up items-center gap-3 [animation-delay:420ms]">
           <Link
             href="/posts/all"
@@ -70,6 +65,21 @@ export default function LandingOverlay() {
           &quot;Sheep&quot;
         </a>{" "}
         by Kinga Kroliczek ·{" "}
+        <a
+          href="http://creativecommons.org/licenses/by/4.0/"
+          className="transition-colors hover:text-slate-400"
+        >
+          CC Attribution
+        </a>
+      </div>
+      <div className="pointer-events-auto absolute bottom-4 w-full px-4 text-center text-[11px] text-slate-600">
+        <a
+          href="https://skfb.ly/6RIqv"
+          className="transition-colors hover:text-slate-400"
+        >
+          &quot;ufo&quot;
+        </a>{" "}
+        by tab1bit0 ·{" "}
         <a
           href="http://creativecommons.org/licenses/by/4.0/"
           className="transition-colors hover:text-slate-400"
