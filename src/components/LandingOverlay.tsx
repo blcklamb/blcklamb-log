@@ -48,44 +48,38 @@ export default function LandingOverlay() {
         </div>
       </div>
 
-      {/* 스크롤/드래그 힌트 */}
-      <div className="absolute bottom-24 flex animate-fade-up flex-col items-center gap-1 text-slate-500 [animation-delay:700ms]">
-        <span className="text-[10px] uppercase tracking-[0.25em]">
-          drag to orbit
-        </span>
-        <span className="animate-scroll-hint text-base">↓</span>
-      </div>
-
       {/* 3D 모델 출처 표기 */}
-      <div className="pointer-events-auto absolute bottom-4 w-full px-4 text-center text-[11px] text-slate-600">
-        <a
-          href="https://skfb.ly/oERRF"
-          className="transition-colors hover:text-slate-400"
-        >
-          &quot;Sheep&quot;
-        </a>{" "}
-        by Kinga Kroliczek ·{" "}
-        <a
-          href="http://creativecommons.org/licenses/by/4.0/"
-          className="transition-colors hover:text-slate-400"
-        >
-          CC Attribution
-        </a>
-      </div>
-      <div className="pointer-events-auto absolute bottom-4 w-full px-4 text-center text-[11px] text-slate-600">
-        <a
-          href="https://skfb.ly/6RIqv"
-          className="transition-colors hover:text-slate-400"
-        >
-          &quot;ufo&quot;
-        </a>{" "}
-        by tab1bit0 ·{" "}
-        <a
-          href="http://creativecommons.org/licenses/by/4.0/"
-          className="transition-colors hover:text-slate-400"
-        >
-          CC Attribution
-        </a>
+      <div className="pointer-events-auto absolute bottom-4 flex w-full flex-col gap-1 px-4 text-center text-[11px] leading-snug text-slate-600">
+        <p>
+          <a
+            href="https://skfb.ly/oERRF"
+            className="transition-colors hover:text-slate-400"
+          >
+            &quot;Sheep&quot;
+          </a>{" "}
+          by Kinga Kroliczek ·{" "}
+          <a
+            href="http://creativecommons.org/licenses/by/4.0/"
+            className="transition-colors hover:text-slate-400"
+          >
+            CC Attribution
+          </a>
+        </p>
+        <p>
+          <a
+            href="https://skfb.ly/6RIqv"
+            className="transition-colors hover:text-slate-400"
+          >
+            &quot;ufo&quot;
+          </a>{" "}
+          by tab1bit0 ·{" "}
+          <a
+            href="http://creativecommons.org/licenses/by/4.0/"
+            className="transition-colors hover:text-slate-400"
+          >
+            CC Attribution
+          </a>
+        </p>
       </div>
     </div>
   );

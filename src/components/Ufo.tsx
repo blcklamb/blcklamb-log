@@ -4,11 +4,13 @@ import { useGLTF } from "@react-three/drei";
 import { useMemo } from "react";
 import { Color, Mesh, MeshStandardMaterial, Object3D } from "three";
 
+type UfoProps = Omit<JSX.IntrinsicElements["primitive"], "object">;
+
 /**
  * ufo.glb 를 불러와 랜딩 씬에 띄운다.
  * 유리(Glass)/돔(Dome) 파트에 은은한 시안 발광을 입혀 bloom 후처리와 어우러지도록 한다.
  */
-export function Ufo(props: JSX.IntrinsicElements["primitive"]) {
+export function Ufo(props: UfoProps) {
   const { scene } = useGLTF("/ufo.glb");
 
   const cloned = useMemo(() => {

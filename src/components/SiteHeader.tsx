@@ -18,6 +18,12 @@ export default function SiteHeader() {
         </Link>
         <nav className="flex items-center gap-1 text-sm">
           <Link
+            href="/about"
+            className="rounded-full px-3 py-1.5 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+          >
+            About
+          </Link>
+          <Link
             href="/posts/all"
             className="rounded-full px-3 py-1.5 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
           >
