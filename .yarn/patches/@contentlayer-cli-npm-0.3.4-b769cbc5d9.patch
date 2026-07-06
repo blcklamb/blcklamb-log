@@ -1,0 +1,47 @@
+diff --git a/dist/commands/_BaseCommand.d.ts b/dist/commands/_BaseCommand.d.ts
+index 919d21f99e6e5626d92134a4ee63d772405bf3a9..ba99cae74e1cf6dfd1e274448ad888ac98cd6813 100644
+--- a/dist/commands/_BaseCommand.d.ts
++++ b/dist/commands/_BaseCommand.d.ts
+@@ -9,7 +9,7 @@ export declare abstract class BaseCommand extends Command {
+     clearCache: boolean;
+     verbose: boolean;
+     abstract executeSafe: () => T.Effect<OT.HasTracer & HasClock & HasCwd & HasConsole & fs.HasFs, unknown, void>;
+-    execute: () => Promise<void>;
++    execute: () => Promise<number>;
+     clearCacheIfNeeded: () => T.Effect<import("@effect-ts/system/Has").Has<core.Cwd> & OT.HasTracer & fs.HasFs & import("@effect-ts/system/Has").Has<import("@contentlayer/utils/effect/ConsoleService").ConsoleService>, fs.RmError, void>;
+ }
+ //# sourceMappingURL=_BaseCommand.d.ts.map
+diff --git a/dist/commands/_BaseCommand.js b/dist/commands/_BaseCommand.js
+index 5f7892637c185d36d9e489b803d8df450f4f7f1b..a0e8b7fd5516d37fa9f9dd31a1575ec95e8ec317 100644
+--- a/dist/commands/_BaseCommand.js
++++ b/dist/commands/_BaseCommand.js
+@@ -20,7 +20,7 @@ export class BaseCommand extends Command {
+         this.execute = () => pipe(this.executeSafe(), core.runMain({
+             tracingServiceName: 'contentlayer-cli',
+             verbose: this.verbose || process.env.CL_DEBUG !== undefined,
+-        }));
++        })).then(() => 0);
+         this.clearCacheIfNeeded = () => {
+             const { clearCache } = this;
+             return T.gen(function* ($) {
+diff --git a/src/commands/_BaseCommand.ts b/src/commands/_BaseCommand.ts
+index 1e8f998f268cee2bd0ea907c7878eb5fdf0e6b47..08f98a7a9d8555df5605a5c04d55a239c4d2caca 100644
+--- a/src/commands/_BaseCommand.ts
++++ b/src/commands/_BaseCommand.ts
+@@ -23,14 +23,14 @@ export abstract class BaseCommand extends Command {
+ 
+   abstract executeSafe: () => T.Effect<OT.HasTracer & HasClock & HasCwd & HasConsole & fs.HasFs, unknown, void>
+ 
+-  execute = (): Promise<void> =>
++  execute = (): Promise<number> =>
+     pipe(
+       this.executeSafe(),
+       core.runMain({
+         tracingServiceName: 'contentlayer-cli',
+         verbose: this.verbose || process.env.CL_DEBUG !== undefined,
+       }),
+-    )
++    ).then(() => 0)
+ 
+   clearCacheIfNeeded = () => {
+     const { clearCache } = this

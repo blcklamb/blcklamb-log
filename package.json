@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "contentlayer dev & next dev",
-    "build": "contentlayer build & next build",
+    "build": "contentlayer build && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -33,7 +36,6 @@
     "gray-matter": "^4.0.3",
     "next": "13.4.9",
     "next-contentlayer": "^0.3.4",
-    "next-mdx-remote": "^4.4.1",
     "postcss": "8.4.25",
     "prism-react-renderer": "^2.3.1",
     "react": "18.2.0",
@@ -45,6 +47,10 @@
   },
   "packageManager": "yarn@4.5.3",
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.20",
     "@types/mdx": "^2.0.11"
+  },
+  "resolutions": {
+    "@contentlayer/cli@npm:0.3.4": "patch:@contentlayer/cli@npm%3A0.3.4#~/.yarn/patches/@contentlayer-cli-npm-0.3.4-b769cbc5d9.patch"
   }
 }

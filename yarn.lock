@@ -33,6 +33,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@contentlayer/cli@patch:@contentlayer/cli@npm%3A0.3.4#~/.yarn/patches/@contentlayer-cli-npm-0.3.4-b769cbc5d9.patch":
+  version: 0.3.4
+  resolution: "@contentlayer/cli@patch:@contentlayer/cli@npm%3A0.3.4#~/.yarn/patches/@contentlayer-cli-npm-0.3.4-b769cbc5d9.patch::version=0.3.4&hash=b7711c"
+  dependencies:
+    "@contentlayer/core": "npm:0.3.4"
+    "@contentlayer/utils": "npm:0.3.4"
+    clipanion: "npm:^3.2.1"
+    typanion: "npm:^3.12.1"
+  checksum: 10/3dbb997702b35b81fd8ce121d5583397f3f3e941ba172d5e9f0b7736e4fcda09ac36b79af635dada920b3e5d1d89f78bb6feb2d0979b472cc368dc589db74f0e
+  languageName: node
+  linkType: hard
+
 "@contentlayer/client@npm:0.3.4":
   version: 0.3.4
   resolution: "@contentlayer/client@npm:0.3.4"
@@ -560,7 +572,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mdx-js/mdx@npm:^2.0.0, @mdx-js/mdx@npm:^2.2.1":
+"@mdx-js/mdx@npm:^2.0.0":
   version: 2.3.0
   resolution: "@mdx-js/mdx@npm:2.3.0"
   dependencies:
@@ -614,18 +626,6 @@ __metadata:
     unist-util-visit: "npm:^5.0.0"
     vfile: "npm:^6.0.0"
   checksum: 10/4bd4e1160e2b2bc9ea2b5b93246ce0e34a11ac5fd420ec025e82fb1120a72b80025d9cb205cce6394bb5f0013f209b9ea453cbda4c0ca4f97a2169df60084742
-  languageName: node
-  linkType: hard
-
-"@mdx-js/react@npm:^2.2.1":
-  version: 2.3.0
-  resolution: "@mdx-js/react@npm:2.3.0"
-  dependencies:
-    "@types/mdx": "npm:^2.0.0"
-    "@types/react": "npm:>=16"
-  peerDependencies:
-    react: ">=16"
-  checksum: 10/bce1cb1dde0a9a2b786cd9167b9e2bc0e3be52c195a4a79aaf1677470566d1fd2979d01baca2380c76aa4a1a27cd89f051484e595fdc4144a428d6af39bb667a
   languageName: node
   linkType: hard
 
@@ -1318,6 +1318,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tailwindcss/typography@npm:^0.5.20":
+  version: 0.5.20
+  resolution: "@tailwindcss/typography@npm:0.5.20"
+  dependencies:
+    postcss-selector-parser: "npm:6.0.10"
+  peerDependencies:
+    tailwindcss: "*"
+  checksum: 10/0a568b11b7bf294bc31b6a870bcd319027f7be4dff6c064eeae7c2dba31ddaffcf08f3bbe21f356f583b3f97f767a12fef9445547d6a8539dd7915a16eaad5ec
+  languageName: node
+  linkType: hard
+
 "@tsparticles/basic@npm:3.7.1":
   version: 3.7.1
   resolution: "@tsparticles/basic@npm:3.7.1"
@@ -1758,13 +1769,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/js-yaml@npm:^4.0.0":
-  version: 4.0.9
-  resolution: "@types/js-yaml@npm:4.0.9"
-  checksum: 10/a0ce595db8a987904badd21fc50f9f444cb73069f4b95a76cc222e0a17b3ff180669059c763ec314bc4c3ce284379177a9da80e83c5f650c6c1310cafbfaa8e6
-  languageName: node
-  linkType: hard
-
 "@types/json5@npm:^0.0.29":
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
@@ -1875,7 +1879,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:>=16":
+"@types/react@npm:*":
   version: 18.3.12
   resolution: "@types/react@npm:18.3.12"
   dependencies:
@@ -6498,21 +6502,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-mdx-remote@npm:^4.4.1":
-  version: 4.4.1
-  resolution: "next-mdx-remote@npm:4.4.1"
-  dependencies:
-    "@mdx-js/mdx": "npm:^2.2.1"
-    "@mdx-js/react": "npm:^2.2.1"
-    vfile: "npm:^5.3.0"
-    vfile-matter: "npm:^3.0.1"
-  peerDependencies:
-    react: ">=16.x <=18.x"
-    react-dom: ">=16.x <=18.x"
-  checksum: 10/89d18095f6ad1b9e99fe990692f6c365d13a51d0bc04c2b76aaee0105dcb21b2a1d66e8d27adf6a094d0cc71b25b71b716a62c9a1ac4add22f6cb94bdb72eaed
-  languageName: node
-  linkType: hard
-
 "next@npm:13.4.9":
   version: 13.4.9
   resolution: "next@npm:13.4.9"
@@ -6582,6 +6571,7 @@ __metadata:
     "@react-three/drei": "npm:^9.119.0"
     "@react-three/fiber": "npm:^8.17.10"
     "@react-three/postprocessing": "npm:^2.16.3"
+    "@tailwindcss/typography": "npm:^0.5.20"
     "@tsparticles/engine": "npm:^3.7.1"
     "@tsparticles/react": "npm:^3.0.0"
     "@tsparticles/slim": "npm:^3.7.1"
@@ -6600,7 +6590,6 @@ __metadata:
     gray-matter: "npm:^4.0.3"
     next: "npm:13.4.9"
     next-contentlayer: "npm:^0.3.4"
-    next-mdx-remote: "npm:^4.4.1"
     postcss: "npm:8.4.25"
     prism-react-renderer: "npm:^2.3.1"
     react: "npm:18.2.0"
@@ -7024,6 +7013,16 @@ __metadata:
   peerDependencies:
     postcss: ^8.2.14
   checksum: 10/d7f6ba6bfd03d42f84689a0630d4e393c421bb53723f16fe179a840f03ed17763b0fe494458577d2a015e857e0ec27c7e194909ffe209ee5f0676aec39737317
+  languageName: node
+  linkType: hard
+
+"postcss-selector-parser@npm:6.0.10":
+  version: 6.0.10
+  resolution: "postcss-selector-parser@npm:6.0.10"
+  dependencies:
+    cssesc: "npm:^3.0.0"
+    util-deprecate: "npm:^1.0.2"
+  checksum: 10/f8ad9beb764a64b51a8027650e745a44ed7198f0b968b823db9563a54990924bcf9eb6fb59fbbb7eb05a89b2b6a24b81b2b7d60ecadda15b04a0024c7663f436
   languageName: node
   linkType: hard
 
@@ -8704,17 +8703,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vfile-matter@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "vfile-matter@npm:3.0.1"
-  dependencies:
-    "@types/js-yaml": "npm:^4.0.0"
-    is-buffer: "npm:^2.0.0"
-    js-yaml: "npm:^4.0.0"
-  checksum: 10/ced55ed7d79291b6c9321557d685b3c0072321f3de44790b72005f1e232394dd9ae68311b99286e327ec4f1d168d5bada986eaa1d475757e17b7e24150f503ac
-  languageName: node
-  linkType: hard
-
 "vfile-message@npm:^3.0.0":
   version: 3.1.4
   resolution: "vfile-message@npm:3.1.4"
@@ -8735,7 +8723,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vfile@npm:^5.0.0, vfile@npm:^5.3.0, vfile@npm:^5.3.2":
+"vfile@npm:^5.0.0, vfile@npm:^5.3.2":
   version: 5.3.7
   resolution: "vfile@npm:5.3.7"
   dependencies:

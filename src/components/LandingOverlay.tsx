@@ -3,56 +3,83 @@ import { SparklesCore } from "./ui/sparkles";
 
 export default function LandingOverlay() {
   return (
-    <div className="absolute top-0 z-20 w-full h-full flex flex-col justify-center text-center">
-      <div className="flex flex-col items-center justify-center">
-        <span className="absolute z-10 mx-auto text-white flex font-bold text-center ">
-          깜냥을 쫓는 개발자, 김채정입니다.
-        </span>
-        <span className="relative top-0 w-fit h-auto justify-center blur-sm flex bg-gradient-to-r items-center from-blue-500 via-teal-500 to-pink-500 bg-clip-text font-bold text-transparent text-center select-auto">
-          깜냥을 쫓는 개발자, 김채정입니다.
-        </span>
-      </div>
-      <div className="flex flex-col items-center justify-center">
-        <span className="absolute mx-auto py-4 flex border w-fit bg-gradient-to-r blur-xl from-blue-500 via-teal-500 to-pink-500 bg-clip-text text-3xl md:text-6xl box-content font-extrabold text-transparent text-center select-none">
-          BLCKLAMB.LOG
-        </span>
-        <h1 className="relative top-0 w-fit h-auto py-4 justify-center flex bg-gradient-to-r items-center from-blue-500 via-teal-500 to-pink-500 bg-clip-text text-3xl md:text-6xl font-extrabold text-transparent text-center select-auto">
-          BLCKLAMB.LOG
-        </h1>
-      </div>
-      <div className="w-full flex justify-center">
-        {/* // TODO: 포스트 완성 후 복구 */}
-        {/* <Link href="/posts/all" className="z-10"> */}
-        <button
-          disabled
-          type="button"
-          className="font-bold px-4 py-2 rounded-sm bg-gray-700"
-        >
-          포스트 구경하기
-        </button>
-        {/* </Link> */}
-      </div>
-      <div className="w-full absolute inset-0 h-screen">
+    <div className="pointer-events-none absolute inset-0 z-20 flex flex-col items-center justify-center text-center">
+      {/* 별가루(starfield) */}
+      <div className="absolute inset-0 h-full w-full">
         <SparklesCore
           id="tsparticlesfullpage"
           background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={100}
-          className="w-full h-full"
+          minSize={0.4}
+          maxSize={1.2}
+          particleDensity={70}
+          className="h-full w-full"
           particleColor="#FFFFFF"
         />
       </div>
-      <div className="text-gray-400 text-xs z-10 absolute bottom-1 text-center w-full">
-        <span>
-          <a href="https://skfb.ly/oERRF">&quot;Sheep&quot;</a>
-        </span>
-        by Kinga Kroliczek is licensed under
-        <span>
-          <a href="http://creativecommons.org/licenses/by/4.0/">
-            Creative Commons Attribution
+
+      <div className="relative flex flex-col items-center px-6">
+        <p className="animate-fade-up text-sm font-medium tracking-tight text-slate-300 [animation-delay:120ms]">
+          깜냥을 쫓는 개발자, 김채정입니다.
+        </p>
+
+        <div className="relative mt-4 animate-fade-up [animation-delay:220ms]">
+          {/* 뒤에 은은하게 번지는 오로라 글로우 */}
+          <h1
+            aria-hidden
+            className="text-aurora absolute inset-0 select-none text-4xl font-extrabold tracking-tight blur-2xl md:text-7xl"
+          >
+            BLOG.BLCKLAMB
+          </h1>
+          <h1 className="text-aurora animate-aurora-pan relative text-4xl font-extrabold tracking-tight md:text-7xl">
+            BLOG.BLCKLAMB
+          </h1>
+        </div>
+        <div className="pointer-events-auto mt-9 flex animate-fade-up items-center gap-3 [animation-delay:420ms]">
+          <Link
+            href="/posts/all"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-white/10 bg-white/5 px-6 py-2.5 text-sm font-semibold text-white backdrop-blur-md transition-colors hover:border-white/20 hover:bg-white/10"
+          >
+            <span className="absolute inset-0 -z-10 bg-aurora opacity-0 transition-opacity duration-300 group-hover:opacity-20" />
+            포스트 구경하기
+            <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+              →
+            </span>
+          </Link>
+        </div>
+      </div>
+
+      {/* 3D 모델 출처 표기 */}
+      <div className="pointer-events-auto absolute bottom-4 flex w-full flex-col gap-1 px-4 text-center text-[11px] leading-snug text-slate-600">
+        <p>
+          <a
+            href="https://skfb.ly/oERRF"
+            className="transition-colors hover:text-slate-400"
+          >
+            &quot;Sheep&quot;
+          </a>{" "}
+          by Kinga Kroliczek ·{" "}
+          <a
+            href="http://creativecommons.org/licenses/by/4.0/"
+            className="transition-colors hover:text-slate-400"
+          >
+            CC Attribution
           </a>
-        </span>
+        </p>
+        <p>
+          <a
+            href="https://skfb.ly/6RIqv"
+            className="transition-colors hover:text-slate-400"
+          >
+            &quot;ufo&quot;
+          </a>{" "}
+          by tab1bit0 ·{" "}
+          <a
+            href="http://creativecommons.org/licenses/by/4.0/"
+            className="transition-colors hover:text-slate-400"
+          >
+            CC Attribution
+          </a>
+        </p>
       </div>
     </div>
   );
