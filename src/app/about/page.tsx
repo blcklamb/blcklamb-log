@@ -88,7 +88,7 @@ const projects = [
     period: "2025.05 (5개월)",
     href: "https://github.com/blcklamb/korean-tour-data-2025-groot-fe",
     summary:
-      "경상북도 생태관광 인증 플랫폼에서 한국관광공사 생태관광 API 기반 관광 정보 검색, 여행 활동별 탄소 배출·절감량 리포트, 커뮤니티, 활동 이력 대시보드를 구현했습니다.",
+      "2025 관광데이터 공모전 장려상 수상작으로, 한국관광공사 API 기반 경북 생태관광 검색과 여행 활동별 탄소 리포트·대시보드를 구현했습니다.",
   },
   {
     name: "묘정송편",
@@ -148,7 +148,7 @@ export default function AboutPage() {
             <br />
             함께 개선합니다.
           </h1>
-          <div className="mt-6 space-y-4 text-base leading-8 text-slate-400">
+          <div className="mt-6 space-y-4 text-base leading-8 text-slate-400 break-keep">
             <p>
               안녕하세요. 프론트엔드 개발자 김채정입니다. B2B SaaS와 커머스
               제품에서 핵심 기능 개발, 제품 구조 개선, 개발 생산성 향상을 함께
