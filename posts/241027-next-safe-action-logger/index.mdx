@@ -1,0 +1,352 @@
+---
+title: "next-safe-action으로 server action logger를 만들어 보자"
+description: Next.js Server Actions에 next-safe-action을 적용해 타입 안정성과 middleware 기반 로깅을 구성하고, 개발 단계 디버깅 경험을 개선한 기록.
+postedAt: "2024-10-27"
+readTime: 10
+thumbnail: "https://velog.velcdn.com/images/blcklamb/post/4aaa14a4-733e-4552-8097-71d83df1d152/image.jpg"
+hashTags: ["NextJS", "server action", "web"]
+---
+
+## 개요
+
+![next-safe-action server action logger thumbnail](https://velog.velcdn.com/images/blcklamb/post/4aaa14a4-733e-4552-8097-71d83df1d152/image.jpg)
+
+Next.js 14부터는 Server Actions를 본격적으로 사용할 수 있다.
+이번 포스팅에서는 Server Actions의 타입 안정성을 강화하고, 실행 흐름을 더 쉽게 추적할 수 있도록 돕는 [`next-safe-action`](https://next-safe-action.dev/)을 살펴본다.
+
+예시는 간단한 todo 애플리케이션을 기준으로 한다.
+최종 목표는 action마다 흩어져 있던 `console.log`를 줄이고, server action 실행 전후를 middleware에서 일관되게 로깅하는 것이다.
+
+- [원문 Velog 글](https://velog.io/@blcklamb/next-safe-action-%ED%99%9C%EC%9A%A9-%EB%B0%A9%EB%B2%95)
+
+## Server Action?
+
+Server Action은 서버와 클라이언트 컴포넌트 양쪽에서 호출할 수 있는 비동기 함수다.
+주로 form 제출이나 데이터 변경처럼 서버에서 처리해야 하는 작업에 사용한다.
+
+예를 들어 todo를 생성하는 버튼이 있다면, 클라이언트 컴포넌트의 이벤트 핸들러에서 server action을 호출할 수 있다.
+
+```tsx
+"use client";
+
+import { createTodoAction } from "@/actions/create-todo";
+import { Button } from "@/components/ui/button";
+import type { TodoCreate } from "@/utils/supabase";
+
+interface CreateTodoButtonProps {
+  newTodo: TodoCreate;
+}
+
+export default function CreateTodoButton({ newTodo }: CreateTodoButtonProps) {
+  const onClickCreateButton = async () => {
+    const result = await createTodoAction(newTodo);
+
+    console.log(result);
+  };
+
+  return <Button onClick={onClickCreateButton}>생성하기</Button>;
+}
+```
+
+server action 쪽에서는 실제 데이터 변경을 수행한다.
+
+```ts
+"use server";
+
+import type { TodoCreate } from "@/utils/supabase";
+import { createClient } from "@/utils/supabase/server";
+
+export const createTodoAction = async (todo: TodoCreate) => {
+  const supabase = await createClient();
+
+  return await supabase.from("todo").insert(todo);
+};
+```
+
+![event handler에서 server action을 실행한 결과](https://velog.velcdn.com/images/blcklamb/post/da737e43-33ac-4f4b-8c72-05a6577d6dfe/image.gif)
+
+다만 mutation이 성공해도 화면 데이터가 바로 바뀌지 않을 수 있다.
+Next.js의 캐시가 남아 있기 때문이다.
+사용자에게 최신 데이터를 보여줘야 한다면 mutation 이후 `revalidatePath`로 관련 route의 캐시를 무효화할 수 있다.
+
+```ts
+"use server";
+
+import { revalidatePath } from "next/cache";
+import type { TodoCreate } from "@/utils/supabase";
+import { createClient } from "@/utils/supabase/server";
+
+export const createTodoAction = async (todo: TodoCreate) => {
+  const supabase = await createClient();
+  const result = await supabase.from("todo").insert(todo);
+
+  revalidatePath("/");
+
+  return result;
+};
+```
+
+![revalidatePath 적용 후 화면이 갱신되는 결과](https://velog.velcdn.com/images/blcklamb/post/1941fcf6-ad1e-43ae-821b-4390c220a25e/image.gif)
+
+## next-safe-action?
+
+`next-safe-action`을 붙이면 Server Actions를 다음과 같은 방식으로 다룰 수 있다.
+
+- client와 server 사이의 입력 타입을 schema로 연결한다.
+- middleware를 통해 인증, 인가, 로깅 같은 공통 로직을 붙일 수 있다.
+- `zod`, `valibot`, `yup`, `typebox` 같은 유효성 검사 라이브러리와 결합할 수 있다.
+- action 실행 결과를 hook으로 다루며 낙관적 업데이트 같은 흐름도 구성할 수 있다.
+
+설치는 다음처럼 진행한다.
+
+```bash
+npm i next-safe-action zod
+```
+
+작성 당시 기준으로 `next-safe-action`은 Next.js 14, React 18.2 이상, TypeScript 5 이상을 요구했다.
+Next.js 15와 함께 쓰려 할 때는 React 19 release candidate와의 호환성 문제가 있었으므로, 당시에는 Next.js 14로 예제를 구성했다.
+
+![Next.js 15와 next-safe-action 호환성 오류](https://velog.velcdn.com/images/blcklamb/post/77536a8b-0b01-4bcb-b047-9b70e1c5240a/image.png)
+
+## Action Client 생성
+
+먼저 공통 action client를 만든다.
+여기서는 서버 에러 처리와 metadata schema를 함께 정의한다.
+
+```ts
+import {
+  createSafeActionClient,
+  DEFAULT_SERVER_ERROR_MESSAGE,
+} from "next-safe-action";
+import { z } from "zod";
+
+export class ActionError extends Error {}
+
+export const action = createSafeActionClient({
+  handleServerError(error) {
+    console.error("Action error:", error.message);
+
+    if (error instanceof ActionError) {
+      return error.message;
+    }
+
+    return DEFAULT_SERVER_ERROR_MESSAGE;
+  },
+  defineMetadataSchema() {
+    return z.object({
+      actionName: z.string(),
+    });
+  },
+});
+```
+
+`metadata`에는 action 이름처럼 디버깅에 필요한 정보를 담을 수 있다.
+나중에 middleware에서 이 값을 읽으면 어떤 action에서 문제가 발생했는지 바로 확인할 수 있다.
+
+## Server Action 적용
+
+기존 server action은 `metadata`, `schema`, `action`을 체이닝하는 형태로 바꾼다.
+
+```ts
+"use server";
+
+import { revalidatePath } from "next/cache";
+import { z } from "zod";
+import { action } from "@/utils/next-safe-action/client";
+import { createClient } from "@/utils/supabase/server";
+
+const todoCreateSchema = z.object({
+  title: z.string().min(1),
+  isDone: z.boolean().default(false),
+});
+
+export const createTodoAction = action
+  .metadata({
+    actionName: "createTodoAction",
+  })
+  .schema(todoCreateSchema)
+  .action(async ({ parsedInput }) => {
+    const supabase = await createClient();
+    const result = await supabase.from("todo").insert(parsedInput);
+
+    revalidatePath("/");
+
+    return result;
+  });
+```
+
+각 단계의 역할은 다음과 같다.
+
+- `metadata`: action 실행과 함께 전달할 부가 정보다.
+- `schema`: client input을 검증하고, 통과한 값을 `parsedInput`으로 넘긴다.
+- `action`: 실제 server action 로직을 작성하는 부분이다.
+
+클라이언트 컴포넌트에서는 `useAction`을 사용해 실행 결과를 콜백으로 다룰 수 있다.
+
+```tsx
+"use client";
+
+import { useAction } from "next-safe-action/hooks";
+import { createTodoAction } from "@/actions/create-todo";
+import { Button } from "@/components/ui/button";
+import type { TodoCreate } from "@/utils/supabase";
+
+interface CreateTodoButtonProps {
+  newTodo: TodoCreate;
+}
+
+export default function CreateTodoButton({ newTodo }: CreateTodoButtonProps) {
+  const createTodo = useAction(createTodoAction, {
+    onSuccess: ({ data }) => {
+      console.log(data);
+    },
+    onError: ({ error }) => {
+      console.error(error);
+    },
+  });
+
+  return (
+    <Button onClick={() => createTodo.execute(newTodo)}>생성하기</Button>
+  );
+}
+```
+
+## Middleware에서 Logger 설정하기
+
+API 연결 작업을 하다 보면 다음과 같은 상황을 자주 만난다.
+
+- 데이터베이스에 반영이 되지 않는다.
+- API 에러가 발생했는데 어떤 요청에서 난 것인지 바로 보이지 않는다.
+- input이 의도한 형태로 들어갔는지 확인하고 싶다.
+
+이럴 때 함수 내부, 반환값, 컴포넌트 곳곳에 `console.log`를 찍기 시작하면 금방 지저분해진다.
+그래서 Server Action에 한정된 logger를 middleware에 붙여보기로 했다.
+
+![console.log를 줄이기 위한 eslint no-console 설정](https://velog.velcdn.com/images/blcklamb/post/f631700b-8f3d-47df-9e71-f53e62d54c23/image.png)
+
+먼저 로그 유틸을 만든다.
+개발 단계에서만 찍히도록 `NODE_ENV` 조건을 둔다.
+
+```ts
+const IS_DEVELOPMENT = process.env.NODE_ENV === "development";
+
+const COLORS = {
+  blue: "\x1b[34m",
+  yellow: "\x1b[33m",
+  green: "\x1b[32m",
+  red: "\x1b[31m",
+  reset: "\x1b[0m",
+  bold: "\x1b[1m",
+};
+
+interface LogArgs {
+  json: unknown;
+  actionName?: string;
+}
+
+const formatJSON = (json: unknown) =>
+  COLORS.yellow + JSON.stringify(json, null, 2) + COLORS.reset;
+
+const log = (
+  message: string,
+  json: unknown,
+  color: string,
+  isError = false
+) => {
+  if (!IS_DEVELOPMENT) {
+    return;
+  }
+
+  const formattedMessage = `${color}${message}${COLORS.reset}`;
+  const formattedJSON = formatJSON(json);
+
+  console[isError ? "error" : "log"](formattedMessage);
+  console[isError ? "error" : "log"](formattedJSON);
+};
+
+const logInfo = ({ json, actionName }: LogArgs) => {
+  log(`[LOG] ${COLORS.bold}${actionName}${COLORS.reset} called with:`, json, COLORS.blue);
+};
+
+const logSuccess = ({ json, actionName }: LogArgs) => {
+  log(`[LOG] ${COLORS.bold}${actionName}${COLORS.reset} succeeded with:`, json, COLORS.green);
+};
+
+const logError = ({ json, actionName }: LogArgs) => {
+  log(`[ERROR] ${COLORS.bold}${actionName}${COLORS.reset} failed with:`, json, COLORS.red, true);
+};
+
+export { logInfo, logSuccess, logError };
+```
+
+이제 action client에 middleware를 붙인다.
+
+```ts
+import {
+  createSafeActionClient,
+  DEFAULT_SERVER_ERROR_MESSAGE,
+} from "next-safe-action";
+import { z } from "zod";
+import { logError, logInfo, logSuccess } from "./util";
+
+export class ActionError extends Error {}
+
+export const action = createSafeActionClient({
+  handleServerError(error) {
+    console.error("Action error:", error.message);
+
+    if (error instanceof ActionError) {
+      return error.message;
+    }
+
+    return DEFAULT_SERVER_ERROR_MESSAGE;
+  },
+  defineMetadataSchema() {
+    return z.object({
+      actionName: z.string(),
+    });
+  },
+}).use(async ({ next, clientInput, metadata }) => {
+  logInfo({
+    json: clientInput,
+    actionName: metadata.actionName,
+  });
+
+  const result = await next();
+
+  if (result.success && !result.data?.error) {
+    logSuccess({
+      json: result.data,
+      actionName: metadata.actionName,
+    });
+
+    return result;
+  }
+
+  logError({
+    json: result,
+    actionName: metadata.actionName,
+  });
+
+  throw result.serverError;
+});
+```
+
+![ANSI escape code가 반복되던 기존 logger 코드](https://velog.velcdn.com/images/blcklamb/post/335a5ebf-463a-4ba1-b731-ad21a2b43675/image.png)
+
+이렇게 구성하면 각 action 함수 안에 별도의 로그를 심지 않아도 실행 인자와 성공, 실패 결과를 일관된 포맷으로 확인할 수 있다.
+특히 action 이름을 metadata로 강제하면, 어느 action에서 실패했는지 추적하기가 훨씬 쉬워진다.
+
+![server action logger 실행 결과](https://velog.velcdn.com/images/blcklamb/post/59eff834-224c-4bf9-8364-0d75e1bc99ed/image.png)
+
+## 마무리
+
+`next-safe-action`은 단순히 Server Action을 감싸는 라이브러리라기보다, Server Action을 애플리케이션의 공통 규칙 안에 넣기 쉽게 만드는 도구에 가깝다.
+입력 검증, error handling, middleware, hook 기반 후속 처리까지 한 흐름 안에서 묶을 수 있다는 점이 장점이다.
+
+다만 모든 프로젝트에 바로 도입할 만큼 가벼운 선택은 아니다.
+작성 당시에는 라이브러리와 문서가 빠르게 바뀌는 중이었고, middleware 내부 API도 짧은 주기로 변경되는 경우가 있었다.
+또한 `zod` 같은 validation 라이브러리를 함께 쓰지 않는다면 얻는 이점이 크게 줄어든다.
+
+결국 핵심은 Server Action 주변의 반복 코드를 어떻게 관리할 것인가다.
+action이 많아지고 mutation 흐름이 복잡해지는 프로젝트라면, `next-safe-action`을 통해 타입과 로깅 규칙을 한곳에 모으는 방식이 충분히 도움이 될 수 있다.

@@ -1,0 +1,428 @@
+---
+title: "아이콘 번들 사이즈 최적화 분투기"
+description: Heroicons에서 RemixIcon으로 전환하며 커진 아이콘 번들을 분석하고, selective import와 Webfont 방식으로 번들 사이즈를 줄인 과정.
+postedAt: "2024-11-10"
+readTime: 12
+thumbnail: "https://velog.velcdn.com/images/blcklamb/post/88b58b86-4f89-4c0c-9729-d65acb41a07c/image.png"
+hashTags: ["optimization", "web", "NextJS"]
+---
+
+## 개요
+
+![아이콘 번들 사이즈 최적화 분투기 thumbnail](https://velog.velcdn.com/images/blcklamb/post/88b58b86-4f89-4c0c-9729-d65acb41a07c/image.png)
+
+어느 날 디자이너에게 아이콘 라이브러리를 [`heroicons`](https://heroicons.com/)에서 [`RemixIcon`](https://remixicon.com/)으로 변경해도 괜찮겠냐는 요청을 받았다.
+디자인 관점에서는 기존 아이콘이 아쉬웠고, RemixIcon은 아이콘 종류가 훨씬 많다는 이유였다.
+
+![디자이너가 RemixIcon 변경을 제안한 상황](https://velog.velcdn.com/images/blcklamb/post/6d521217-00ee-4d41-8ccf-9a38821d5857/image.png)
+
+처음에는 디자인 요구사항이니 바꾸면 되겠다고 생각했다.
+그러다 문득 "아이콘 종류가 훨씬 많다면 라이브러리 크기도 같이 커지는 것 아닐까?"라는 질문이 생겼다.
+당시 프로젝트의 `Icon` 컴포넌트는 패키지 전체를 가져오는 형태였기 때문에, 아이콘 라이브러리 변경이 번들 사이즈에 영향을 줄 가능성이 충분했다.
+
+이번 글은 그 질문에서 시작해 아이콘 환경 설정을 바꾸고, 결과적으로 번들 사이즈를 크게 줄였던 과정을 정리한 기록이다.
+
+- [원문 Velog 글](https://velog.io/@blcklamb/%EC%95%84%EC%9D%B4%EC%BD%98-%EB%B2%88%EB%93%A4-%EC%82%AC%EC%9D%B4%EC%A6%88-%EC%B5%9C%EC%A0%81%ED%99%94-%EB%B6%84%ED%88%AC%EA%B8%B0)
+
+## 아이콘 적용 방법
+
+웹에서 아이콘을 관리하는 방법은 여러 가지가 있다.
+이번에 비교한 방식은 세 가지다.
+
+1. 아이콘 라이브러리
+2. SVG sprite
+3. Webfont
+
+각 방식은 장단점이 분명하다.
+사용하는 아이콘 수, 디자인 시스템의 성숙도, 프로젝트 규모, 서버 컴포넌트 비중에 따라 선택지가 달라진다.
+
+## 1. 아이콘 라이브러리
+
+아이콘 라이브러리는 가장 익숙하고 도입 비용이 낮은 방식이다.
+패키지를 설치하고 필요한 아이콘을 import해서 사용하면 된다.
+
+```bash
+npm install react-icons
+```
+
+```tsx
+import { FaBeer } from "react-icons/fa";
+
+function SampleComponent() {
+  return <h3>Lets go for a <FaBeer />?</h3>;
+}
+```
+
+장점은 세팅이 빠르고 사용법이 단순하다는 것이다.
+토이 프로젝트나 디자인 시스템 없이 진행하는 작은 프로젝트에서는 충분히 실용적이다.
+
+단점은 가져오는 방식에 따라 쓰지 않는 아이콘까지 번들에 포함될 수 있다는 점이다.
+특히 `import * as Icons from "..."`처럼 패키지 전체를 가져와 런타임에 name으로 선택하는 구조라면 번들 사이즈가 빠르게 커질 수 있다.
+
+## 2. SVG Sprite
+
+SVG sprite는 여러 SVG를 `<symbol>`로 모아두고, 실제 사용처에서는 `<use>`로 원하는 아이콘을 참조하는 방식이다.
+프로젝트에서는 `IconLoader`를 전역에 한 번 렌더링하고, 각 컴포넌트에서는 `Icon` 컴포넌트만 사용하는 구조를 만들 수 있다.
+
+```tsx
+export const IconLoader = () => (
+  <svg
+    id="sprite-symbols"
+    xmlns="http://www.w3.org/2000/svg"
+    style={{ display: "none" }}
+  >
+    <defs>
+      <symbol id="forward" width="24" height="24" viewBox="0 0 24 24">
+        <path
+          d="M10 6s2 .5 5.5 2.5S20 12 20 12s-1 1.5-4.5 3.5S10 18 10 18"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          fill="none"
+        />
+      </symbol>
+    </defs>
+  </svg>
+);
+```
+
+```tsx
+interface IconProps {
+  name: "forward" | "share";
+  width: number;
+  height: number;
+}
+
+const Icon = ({ name, width, height }: IconProps) => {
+  return (
+    <svg width={width} height={height} aria-hidden>
+      <use href={`#${name}`} />
+    </svg>
+  );
+};
+```
+
+장점은 여러 아이콘을 개별 import하지 않아도 되므로 사용부가 깔끔해진다는 점이다.
+또한 `Icon` 컴포넌트에 size, color, 접근성 관련 props를 모아 디자인 시스템에 맞게 확장하기 쉽다.
+
+단점은 유지보수다.
+아이콘이 새로 추가되거나 사용하지 않는 아이콘이 생길 때 sprite 파일을 계속 관리해야 한다.
+또한 아이콘을 사용하지 않는 페이지에서도 전역 `IconLoader`가 로드될 수 있다.
+
+## 3. Webfont
+
+Webfont 방식은 아이콘을 폰트처럼 로드한다.
+아이콘 폰트와 CSS class가 한 쌍으로 동작하고, 사용처에서는 `<i>` 태그에 className을 붙여 아이콘을 렌더링한다.
+
+```tsx
+import { cn } from "@/util/cn";
+
+interface IconProps {
+  name: string;
+  className?: string;
+}
+
+function Icon({ name, className }: IconProps) {
+  return <i className={cn(`ri-${name}`, className)} aria-hidden />;
+}
+
+export { Icon };
+```
+
+장점은 아이콘 SVG가 JavaScript 번들에 직접 포함되지 않는다는 점이다.
+폰트와 CSS를 별도 asset으로 로드하므로 번들 사이즈 부담을 크게 줄일 수 있다.
+
+단점도 있다.
+초기 세팅 비용이 아이콘 라이브러리보다 높고, 네트워크 상태나 폰트 로딩 전략에 따라 아이콘이 늦게 보이거나 깨져 보일 수 있다.
+또한 의미 있는 아이콘이라면 `aria-label` 같은 접근성 처리를 별도로 신경 써야 한다.
+
+## 배경
+
+당시 프로젝트에서는 아이콘 라이브러리를 감싼 `Icon.tsx`를 패키지 형태로 만들어 쓰고 있었다.
+디자이너는 Figma에서 아이콘 이름을 확인하고, 개발자는 그 이름을 `Icon` 컴포넌트의 `name`으로 넣는 흐름이었다.
+
+문제는 내부 구현이었다.
+
+```tsx
+import * as RemixIcons from "@remixicon/react";
+
+interface IconProps {
+  name: keyof typeof RemixIcons;
+  className?: string;
+}
+
+function Icon({ name, className }: IconProps) {
+  const RemixIcon = RemixIcons[name];
+
+  return <RemixIcon className={className} />;
+}
+```
+
+이 구조는 사용부에서 매우 편하다.
+하지만 `import * as RemixIcons` 때문에 실제로 쓰지 않는 아이콘까지 함께 번들에 들어갈 수 있다.
+
+번들 분석에는 [`@next/bundle-analyzer`](https://nextjs.org/docs/app/building-your-application/optimizing/bundle-analyzer)를 사용했다.
+예시 애플리케이션은 서버 컴포넌트와 클라이언트 컴포넌트에 각각 아이콘 100개를 넣은 상태로 구성했다.
+
+```bash
+ANALYZE=true npm run build
+```
+
+분석에서는 다음 세 항목을 주로 봤다.
+
+- `NodeJS-stat`: 서버 사이드에서 참조하는 전체 번들 크기다.
+- `Client-parsed`: 브라우저가 로드 후 파싱하는 클라이언트 번들 크기다.
+- `Client-gzipped`: 네트워크 전송 시 압축된 클라이언트 번들 크기다.
+
+빈 프로젝트일 경우:
+
+![빈 프로젝트 번들 분석 결과](https://velog.velcdn.com/images/blcklamb/post/b3a96a4e-93d4-4ae0-a189-f9c3f89a60a0/image.png)
+
+heroicons를 쓰는 경우:
+
+![heroicons 사용 시 번들 분석 결과](https://velog.velcdn.com/images/blcklamb/post/2a6b1ffc-6f32-4a85-96a8-56c32186f9e8/image.png)
+
+RemixIcon을 쓰는 경우:
+
+![RemixIcon 사용 시 번들 분석 결과](https://velog.velcdn.com/images/blcklamb/post/2a0d9495-dbb6-4c8b-93ac-9698039ea036/image.png)
+
+아이콘 수가 많은 라이브러리를 전체 import하면 번들 사이즈가 커진다는 것을 확인했고, 그다음부터 최적화 방법을 찾기 시작했다.
+
+## 첫 번째 시도: Icon Scraping CLI
+
+첫 번째 시도는 프로젝트 안에서 실제로 쓰는 아이콘 이름만 수집하고, 그 아이콘만 명시적으로 import하는 방식이었다.
+
+![번들 사이즈에 영향을 준 RemixIcon 전체 import](https://velog.velcdn.com/images/blcklamb/post/67d784d8-c1e5-4b8c-8556-988fc0ae616e/image.png)
+
+Next.js의 `optimizePackageImports`도 시도했지만 RemixIcon에는 효과가 없었다.
+
+![optimizePackageImports 적용 후에도 변화가 없는 번들 분석 결과](https://velog.velcdn.com/images/blcklamb/post/3c61f8a4-6469-4b9e-a61a-9661c506cf7a/image.png)
+
+```json
+{
+  "scripts": {
+    "icon-scrape": "grep -r 'name=\"Ri' ./src | sed -E 's/.*name=\"([^\"]+)\".*/\\1/' | sort | uniq | tr '\\n' ', '"
+  }
+}
+```
+
+이 스크립트는 `name="Ri...` 형태로 사용된 아이콘을 찾아 중복 제거한 뒤 쉼표로 이어진 문자열을 만든다.
+그 결과를 바탕으로 `Icon` 컴포넌트의 import 구문과 `iconMap`을 만든다.
+
+```tsx
+import {
+  RiAccountBoxLine,
+  RiAddLine,
+  RiArrowRightLine,
+  RiCloseLine,
+} from "@remixicon/react";
+import type { SVGProps } from "react";
+import { cn } from "@/util/cn";
+
+type ReservedProps = "color" | "size" | "width" | "height" | "fill" | "viewBox";
+type AllSVGProps = SVGProps<SVGSVGElement>;
+
+interface RemixiconProps
+  extends Pick<AllSVGProps, Exclude<keyof AllSVGProps, ReservedProps>> {
+  color?: string;
+  size?: number | string;
+  children?: never;
+}
+
+const iconMap = {
+  RiAccountBoxLine,
+  RiAddLine,
+  RiArrowRightLine,
+  RiCloseLine,
+};
+
+type RemixIconName = keyof typeof iconMap;
+
+export interface IconProps extends RemixiconProps {
+  name: RemixIconName;
+}
+
+function Icon({ name, className, ...props }: IconProps) {
+  const RemixIcon = iconMap[name];
+
+  return <RemixIcon className={cn("shrink-0", className)} {...props} />;
+}
+
+export { Icon };
+```
+
+결과는 유의미했다.
+
+![Icon Scraping CLI 적용 후 번들 분석 결과](https://velog.velcdn.com/images/blcklamb/post/3312dbb8-f6f1-425d-a72a-08a27c3ce2dd/image.png)
+
+<div className="not-prose my-6 overflow-x-auto">
+  <table className="w-full min-w-[520px] border-collapse text-sm">
+    <thead>
+      <tr className="border-b border-white/20 text-left">
+        <th className="py-3 pr-4 font-semibold text-slate-200">항목</th>
+        <th className="py-3 pr-4 text-right font-semibold text-slate-200">변경 전</th>
+        <th className="py-3 pr-4 text-right font-semibold text-slate-200">변경 후</th>
+        <th className="py-3 text-right font-semibold text-slate-200">변화</th>
+      </tr>
+    </thead>
+    <tbody className="text-slate-300">
+      <tr className="border-b border-white/10">
+        <td className="py-3 pr-4">Node-stat</td>
+        <td className="py-3 pr-4 text-right">5.11 MB</td>
+        <td className="py-3 pr-4 text-right">5.12 MB</td>
+        <td className="py-3 text-right">+0.2%</td>
+      </tr>
+      <tr className="border-b border-white/10">
+        <td className="py-3 pr-4">Client-parsed</td>
+        <td className="py-3 pr-4 text-right">2.73 MB</td>
+        <td className="py-3 pr-4 text-right">624.83 KB</td>
+        <td className="py-3 text-right">-77.1%</td>
+      </tr>
+      <tr>
+        <td className="py-3 pr-4">Client-gzipped</td>
+        <td className="py-3 pr-4 text-right">602.53 KB</td>
+        <td className="py-3 pr-4 text-right">183.35 KB</td>
+        <td className="py-3 text-right">-69.6%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+실제 현업 프로젝트에서는 사용하는 아이콘이 18개였고, 번들 분석 결과 아이콘 관련 번들 크기가 약 98.5% 줄었다.
+
+다만 이 방식에는 불편함이 있었다.
+프로젝트 초기에 사용할 아이콘 목록이 확정되어 있다면 괜찮지만, 그렇지 않다면 개발 후반에 스크립트를 다시 돌리고 `Icon` 컴포넌트를 수동으로 수정해야 한다.
+자동화처럼 보이지만 실제로는 수동 작업이 남는 구조였다.
+
+## 두 번째 시도: Webfont
+
+두 번째 시도는 Webfont였다.
+개발자가 아이콘 목록을 scrape하고 `iconMap`을 수정하지 않아도 번들 사이즈를 줄일 수 있는 방법이 필요했기 때문이다.
+
+RemixIcon은 Webfont 사용 방식을 제공한다.
+폰트 파일과 CSS를 준비한 뒤, 아이콘 이름을 className으로 넣으면 된다.
+
+폰트 파일 다운로드:
+
+![RemixIcon 폰트 파일 다운로드](https://velog.velcdn.com/images/blcklamb/post/c7ef5ca2-1656-4a1d-b39d-893e75fbaf42/image.png)
+
+폰트 세팅과 `layout.tsx` import:
+
+![RemixIcon webfont CSS 설정과 layout import](https://velog.velcdn.com/images/blcklamb/post/91aee0c2-5c32-4e3f-86db-df568bc6d363/image.png)
+
+```tsx
+import { cn } from "@/util/cn";
+import type { RemixType } from "./remix-type";
+
+interface IconProps {
+  name: RemixType;
+  className?: string;
+  label?: string;
+}
+
+function Icon({ name, className, label }: IconProps) {
+  return (
+    <i
+      className={cn(`ri-${name}`, className)}
+      aria-hidden={label ? undefined : true}
+      aria-label={label}
+    />
+  );
+}
+
+export { Icon };
+```
+
+라이브러리 컴포넌트를 직접 import하지 않기 때문에 JavaScript 번들에서 아이콘 컴포넌트가 사라진다.
+사용부도 `<Icon name="arrow-right-line" />`처럼 간단하게 유지할 수 있다.
+
+다만 이 방식으로 바꾸면 라이브러리에서 제공하던 아이콘 이름 타입을 그대로 가져오기 어렵다.
+그래서 `remixicon.less`에 있는 전체 className을 파싱해 union type을 생성했다.
+
+![remixicon.less에서 아이콘 className을 확인하는 과정](https://velog.velcdn.com/images/blcklamb/post/e641468f-82e5-4e9d-a7a6-9da4c699430e/image.png)
+
+```ts
+const getTypesFrom = (source: string) => {
+  return source
+    .split(":global {")[1]
+    .split("\n")
+    .filter((line) => line !== "}" && line !== "")
+    .map((line) => line.split(":before")[0].replace("ri-", "").replace(".", ""))
+    .join("\" | \"");
+};
+```
+
+이 값을 이용해 `RemixType`을 새로 정의했다.
+
+![RemixType union type 정의](https://velog.velcdn.com/images/blcklamb/post/2208b88f-547e-42e7-8a90-e50c071fa35e/image.png)
+
+이 방식의 번들 분석 결과는 다음과 같았다.
+
+![Webfont 적용 후 번들 분석 결과](https://velog.velcdn.com/images/blcklamb/post/a4f57cec-4cfc-4d2c-8cb8-2e8738b2e96b/image.png)
+
+<div className="not-prose my-6 overflow-x-auto">
+  <table className="w-full min-w-[520px] border-collapse text-sm">
+    <thead>
+      <tr className="border-b border-white/20 text-left">
+        <th className="py-3 pr-4 font-semibold text-slate-200">항목</th>
+        <th className="py-3 pr-4 text-right font-semibold text-slate-200">변경 전</th>
+        <th className="py-3 pr-4 text-right font-semibold text-slate-200">변경 후</th>
+        <th className="py-3 text-right font-semibold text-slate-200">변화</th>
+      </tr>
+    </thead>
+    <tbody className="text-slate-300">
+      <tr className="border-b border-white/10">
+        <td className="py-3 pr-4">Node-stat</td>
+        <td className="py-3 pr-4 text-right">5.11 MB</td>
+        <td className="py-3 pr-4 text-right">884.23 KB</td>
+        <td className="py-3 text-right">-82.7%</td>
+      </tr>
+      <tr className="border-b border-white/10">
+        <td className="py-3 pr-4">Client-parsed</td>
+        <td className="py-3 pr-4 text-right">2.73 MB</td>
+        <td className="py-3 pr-4 text-right">565.98 KB</td>
+        <td className="py-3 text-right">-79.3%</td>
+      </tr>
+      <tr>
+        <td className="py-3 pr-4">Client-gzipped</td>
+        <td className="py-3 pr-4 text-right">602.53 KB</td>
+        <td className="py-3 pr-4 text-right">169.68 KB</td>
+        <td className="py-3 text-right">-71.8%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+클라이언트 번들은 첫 번째 시도와 비슷하게 줄었지만, 서버 번들은 Webfont 방식에서 훨씬 크게 줄었다.
+그래서 최종적으로는 Webfont 방식을 선택했다.
+
+## 선택 기준
+
+아이콘을 다루는 방식에는 정답이 없다.
+프로젝트의 상태에 따라 선택이 달라질 뿐이다.
+
+아이콘 라이브러리는 다음 상황에 적합하다.
+
+1. 토이 프로젝트나 간단한 실습처럼 빠른 구현이 우선인 경우
+2. 별도 디자인 시스템 없이 진행하는 프로젝트인 경우
+
+SVG sprite는 다음 상황에서 고려할 만하다.
+
+1. 디자이너가 직접 제작한 SVG 아이콘을 사용해야 하는 경우
+2. 사용할 아이콘 목록이 거의 고정되어 있고 변경 가능성이 낮은 경우
+
+Webfont는 다음 상황에서 도입을 고려할 수 있다.
+
+1. 초기 프로젝트라 아이콘 사용 목록을 미리 확정하기 어려운 경우
+2. 서버 컴포넌트 비중이 높아 서버 번들 크기까지 신경 써야 하는 경우
+3. 디자인팀과 개발팀이 className 기반의 아이콘 이름 규칙을 안정적으로 공유할 수 있는 경우
+
+## 마무리
+
+이번 최적화는 단순히 라이브러리를 바꾸는 문제가 아니었다.
+디자인팀이 더 다양한 아이콘을 쓰고 싶어 하는 상황에서, 개발팀은 그 선택이 번들 사이즈와 유지보수 비용에 어떤 영향을 주는지 확인해야 했다.
+
+첫 번째 시도였던 selective import 방식은 클라이언트 번들 크기를 크게 줄였지만, 사용 아이콘 목록을 계속 관리해야 하는 부담이 있었다.
+두 번째 시도였던 Webfont 방식은 접근성 처리와 폰트 로딩 전략을 신경 써야 했지만, 번들 사이즈와 개발자 경험 사이에서 더 나은 균형을 제공했다.
+
+결국 아이콘 최적화에도 은총알은 없다.
+중요한 것은 현재 프로젝트에서 어떤 비용을 줄이고 싶은지 먼저 정하는 일이다.
